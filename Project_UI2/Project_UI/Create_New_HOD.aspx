@@ -84,7 +84,7 @@
                             <p>
                                 This System is for feedback purpose and system provide facilty to create your own system and data.
                             </p>
-                            <%--<asp:Button ID="Button2" runat="server" Text="Button" class="butt_out" />--%>
+                            <a href="HomePageFinal.aspx" class="btn btn-info" role="button" title="Home">Home</a>
                         </div>
                     </div>
                 </div>

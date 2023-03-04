@@ -106,6 +106,8 @@
     <Content Include="Remove_Student.aspx" />
     <Content Include="STUDENT_HomePage.aspx" />
     <Content Include="Student_Sem_Year.aspx" />
+    <Content Include="Subject_Add.aspx" />
+    <Content Include="Subject_Modify.aspx" />
     <Content Include="temp.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -239,6 +241,20 @@
     </Compile>
     <Compile Include="Student_Sem_Year.aspx.designer.cs">
       <DependentUpon>Student_Sem_Year.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Subject_Add.aspx.cs">
+      <DependentUpon>Subject_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Subject_Add.aspx.designer.cs">
+      <DependentUpon>Subject_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Subject_Modify.aspx.cs">
+      <DependentUpon>Subject_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Subject_Modify.aspx.designer.cs">
+      <DependentUpon>Subject_Modify.aspx</DependentUpon>
     </Compile>
     <Compile Include="temp.aspx.cs">
       <DependentUpon>temp.aspx</DependentUpon>

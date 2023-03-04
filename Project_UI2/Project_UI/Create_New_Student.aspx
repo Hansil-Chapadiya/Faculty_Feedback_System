@@ -74,7 +74,6 @@
                                 </asp:DropDownList>
                             </div>
                             <asp:Button ID="Button1" runat="server" Text="CREATE ACCOUNT" class="butt" OnClick="Button1_Click" />
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                         </div>
                     </form>
                 </div>

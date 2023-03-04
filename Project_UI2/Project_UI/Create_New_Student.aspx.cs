@@ -25,8 +25,6 @@ namespace Project_UI
             HttpCookie ck = Request.Cookies["Info"];
             year = ck["Year"].ToString();
             sem = ck["Sem"].ToString();
-
-            Label1.Visible = false;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -77,12 +75,12 @@ namespace Project_UI
                             TextBox2.Text = "";
                             cmd2.Dispose();
                         }
-                        catch(Exception ex)
+                        catch(Exception)
                         {
                             Response.Write("<script>alert('Not inserted in Year table!');</script>");
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         Response.Write("<script>alert('Not inserted in User table');</script>");
                     }
@@ -91,7 +89,7 @@ namespace Project_UI
             }
             else
             {
-                Label1.Text = "Username and password is empty";
+                Response.Write("<script>alert('Username and password is empty');</script>");
             }
 
 

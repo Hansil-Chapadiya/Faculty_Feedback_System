@@ -11,44 +11,17 @@ namespace Project_UI
 {
 
 
-    public partial class Create_New_Student
+    public partial class Subject_Add
     {
 
         /// <summary>
-        /// TextBox5 control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
-
-        /// <summary>
-        /// TextBox6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
-
-        /// <summary>
-        /// TextBox7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
-
-        /// <summary>
-        /// TextBox8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// TextBox1 control.
@@ -69,22 +42,22 @@ namespace Project_UI
         protected global::System.Web.UI.WebControls.TextBox TextBox2;
 
         /// <summary>
-        /// Password_Std control.
+        /// DropDownList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password_Std;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// DropDownList3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
 
         /// <summary>
         /// Button1 control.
