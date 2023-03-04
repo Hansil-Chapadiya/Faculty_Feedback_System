@@ -6,7 +6,7 @@
             <div class="row m-5 d-flex justify-content-center">
                 <div class="d-flex justify-content-center col m-4">
                     <div class="card" style="width: 18rem;">
-                        <asp:ImageButton ID="HODRoleImg" runat="server" ImageUrl="~/Images/Add_Faculty.jpg" CssClass="card-img-top" PostBackUrl="~/Create_New_Student.aspx" />
+                        <asp:ImageButton ID="HODRoleImg" runat="server" ImageUrl="~/Images/Add_Faculty.jpg" CssClass="card-img-top" PostBackUrl="~/Student_Sem_Year.aspx" />
                         <div class="card-body">
                             <h5 class="card-title">New Students</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
