@@ -54,7 +54,7 @@ body {
 .myCard {
     position: relative;
     background: #fff;
-    height: auto;
+    height: 140%;
     border-radius: 25px;
     -webkit-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
     -moz-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
@@ -99,7 +99,7 @@ body {
     border: none;
     border-radius: 25px;
     padding: 10px;
-    margin-left:20px;
+    margin-left: 20px;
     -webkit-box-shadow: 0px 10px 41px -11px rgba(0,0,0,0.7);
     -moz-box-shadow: 0px 10px 41px -11px rgba(0,0,0,0.7);
     box-shadow: 0px 10px 41px -11px rgba(0,0,0,0.7);
@@ -144,5 +144,3 @@ body {
     .butt_out:focus {
         outline: none;
     }
-
-

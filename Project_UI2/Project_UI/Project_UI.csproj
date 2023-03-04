@@ -106,6 +106,7 @@
     <Content Include="Remove_Student.aspx" />
     <Content Include="STUDENT_HomePage.aspx" />
     <Content Include="Student_Sem_Year.aspx" />
+    <Content Include="Subjects.css" />
     <Content Include="Subject_Add.aspx" />
     <Content Include="Subject_Modify.aspx" />
     <Content Include="temp.aspx" />
