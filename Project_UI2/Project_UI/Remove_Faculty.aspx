@@ -22,7 +22,7 @@
                                 <i class="fas fa-user"></i>
                                 <asp:TextBox ID="TextBox5" runat="server" placeholder="Faculty ID" class="myInput" required="true"></asp:TextBox>
                             </div>
-                             <asp:Button ID="Button2" runat="server" Text="Remove" class="butt" />
+                             <asp:Button ID="Button2" runat="server" Text="Remove" class="butt" OnClick="Button2_Click" />
                         </div>
                     </form>
                 </div>

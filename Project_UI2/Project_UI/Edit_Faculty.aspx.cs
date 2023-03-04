@@ -85,7 +85,7 @@ namespace Project_UI
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 cn.Close();
-                Response.Redirect("HOD_Faculty.aspx");
+                Response.Write("<script>alert('Successfull to Modify !');</script>");
             }
             catch (Exception)
             {

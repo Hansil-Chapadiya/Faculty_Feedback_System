@@ -23,14 +23,16 @@ namespace Project
             String tpassword = TextBox2.Text.ToString();
             String pass1 = encryption(tpassword);
             String pass2;
-            string qstring = "select User_id,Password from User_ where (User_id = '" + TextBox1.Text + "') ";
+            string qstring = "select User_id,Password,Role_id from User_ where (User_id = '" + TextBox1.Text + "') ";
             if (TextBox1.Text.Length > 0 && TextBox2.Text.Length > 0)
             {
                 SqlConnection cn = new SqlConnection();
                 try
                 {
                     //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
-                    cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
+                    //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
+                    cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
+
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(qstring, cn);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -39,8 +41,6 @@ namespace Project
                         pass2 = dr.GetString(1);
                         tpassword = pass2;
                     }
-                    dr.Close();
-                    cmd.Dispose();
                     if (pass1 == tpassword)
                     {
                         captcha1.ValidateCaptcha(TextBox3.Text.Trim());
@@ -52,7 +52,7 @@ namespace Project
                                 Session["User_id"] = TextBox1.Text;
                                 Session["sid"] = sessionId;
                                 Session["team_id"] = "HOD" + TextBox4.Text;
-                                Response.Redirect("HOD_1.aspx");
+                                Response.Redirect("HOD_HomePage.aspx");
                                 dr.Close();
                                 cmd.Dispose();
                             }
@@ -62,7 +62,7 @@ namespace Project
                                 Session["User_id"] = TextBox1.Text;
                                 Session["sid"] = sessionId;
                                 Session["team_id"] = "HOD" + TextBox4.Text;
-                                Response.Redirect("Faculty_1.aspx");
+                                Response.Redirect("FACULTY_HomePage.aspx");
                                 dr.Close();
                                 cmd.Dispose();
                             }
@@ -72,7 +72,7 @@ namespace Project
                                 Session["User_id"] = TextBox1.Text;
                                 Session["sid"] = sessionId;
                                 Session["team_id"] = "HOD" + TextBox4.Text;
-                                Response.Redirect("Student_1.aspx");
+                                Response.Redirect("STUDENT_HomePage.aspx");
                                 dr.Close();
                                 cmd.Dispose();
                             }
