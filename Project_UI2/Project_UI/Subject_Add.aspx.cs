@@ -16,9 +16,9 @@ namespace Project_UI
             if (!IsPostBack)
             {
                 SqlConnection cn = new SqlConnection();
-                cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
+                //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
                 //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-                //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
+                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
                 //Session["team_id"]
                 String sql = "Select User_id,First_name from User_ where Role_id != 3 ";
                 cn.Open();
@@ -50,9 +50,9 @@ namespace Project_UI
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
+            //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
             //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-            //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + 123 + ";Integrated Security=True";
+            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + 123 + ";Integrated Security=True";
             //Session["team_id"]
             String Insert_str = "Insert into Subject values ('" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + DropDownList2.SelectedItem + "', '" + DropDownList3.SelectedItem + "', '" + DropDownList1.SelectedValue + "') ";
             cn.Open();
@@ -64,6 +64,8 @@ namespace Project_UI
                 TextBox2.Text = "";
                 cmd.Dispose();
                 cn.Close();
+                Response.Write("<script>alert('New Subject is created !!');</script>");
+
             }
             catch (Exception)
             {

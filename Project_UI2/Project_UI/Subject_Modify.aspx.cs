@@ -16,9 +16,9 @@ namespace Project_UI
             if (!IsPostBack)
             {
                 SqlConnection cn = new SqlConnection();
-                cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
+                //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
                 //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-                //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
+                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
                 //Session["team_id"]
                 String sql = "Select * from Subject  ";
                 String User_str = "Select * from User_ where Role_id != 3";
@@ -83,9 +83,9 @@ namespace Project_UI
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
+            //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
             //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-            //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
+            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
             //Session["team_id]
             string str = "Update Subject set Faculty_id = '" + DropDownList3.SelectedItem + "' , Faculty_name= '" + DropDownList4.SelectedItem + "' where Subject_code = '" + DropDownList1.SelectedItem + "'";
             cn.Open();
