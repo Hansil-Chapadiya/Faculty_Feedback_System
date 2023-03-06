@@ -84,6 +84,7 @@
     <Content Include="HOD_Faculty_Function.aspx" />
     <Content Include="HOD_HomePage.aspx" />
     <Content Include="HOD_Student_Function.aspx" />
+    <Content Include="HOD_Subject_Function.aspx" />
     <Content Include="HomePageFinal.aspx" />
     <Content Include="Images\Add_Faculty.jpg" />
     <Content Include="Images\Chart.jpeg" />
@@ -97,8 +98,11 @@
     <Content Include="Images\Remove_Faculty.jpg" />
     <Content Include="Images\StatusImage.jpeg" />
     <Content Include="Images\student.png" />
+    <Content Include="Images\SubjectAdd.png" />
     <Content Include="Images\SubjectEdit.jpeg" />
+    <Content Include="Images\SubjectRemove.png" />
     <Content Include="Images\Subjects.png" />
+    <Content Include="Images\Subject_Edit.png" />
     <Content Include="login1.aspx" />
     <Content Include="loginstyle.css" />
     <Content Include="removefaculty.css" />
@@ -185,6 +189,13 @@
     </Compile>
     <Compile Include="HOD_Student_Function.aspx.designer.cs">
       <DependentUpon>HOD_Student_Function.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HOD_Subject_Function.aspx.cs">
+      <DependentUpon>HOD_Subject_Function.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HOD_Subject_Function.aspx.designer.cs">
+      <DependentUpon>HOD_Subject_Function.aspx</DependentUpon>
     </Compile>
     <Compile Include="login1.aspx.cs">
       <DependentUpon>login1.aspx</DependentUpon>
