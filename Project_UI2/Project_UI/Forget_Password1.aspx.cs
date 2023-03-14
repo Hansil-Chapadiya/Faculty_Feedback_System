@@ -31,7 +31,8 @@ namespace Project
             try
             {
                 //conn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + TextBox6.Text + ";Integrated Security=True";
-                conn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + TextBox6.Text + ";Integrated Security=True";
+                conn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + TextBox6.Text + ";Integrated Security=True";
+                //conn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=HOD" + TextBox6.Text + ";Integrated Security=True";
                 conn.Open();
                 string queryStr = "select * from User_ where User_id = '" + TextBox1.Text + "' and Email = '" + TextBox2.Text + "'";
                 try
@@ -102,6 +103,8 @@ namespace Project
             String pass = encryption(str);
             SqlConnection conn = new SqlConnection();
             //conn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + TextBox6.Text + ";Integrated Security=True";
+            
+            //conn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + TextBox6.Text + ";Integrated Security=True";
             conn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + TextBox6.Text + ";Integrated Security=True";
             conn.Open();
             string queryStr = "update User_ set Password = '" + pass + "' where User_id = '" + TextBox1.Text + "'";

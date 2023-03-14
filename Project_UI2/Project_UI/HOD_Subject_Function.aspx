@@ -14,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center col m-4">
+                <%--<div class="d-flex justify-content-center col m-4">
                     <div class="card" style="width: 18rem;">
                         <asp:ImageButton ID="FacultyRoleImg" runat="server" ImageUrl="~/Images/SubjectRemove.png" CssClass="card-img-top" PostBackUrl="~/Subject_Add.aspx" />
                         <div class="card-body">
@@ -23,7 +23,7 @@
                             <a href="Subject_Add.aspx" class="btn btn-lg btn-outline-light lin">Remove</a>
                         </div>
                     </div>
-                </div>
+                </div>--%>
                 <div class="d-flex justify-content-center col m-4">
                     <div class="card" style="width: 18rem;">
                         <asp:ImageButton ID="StudentRoleImg" runat="server" ImageUrl="~/Images/Subject_Edit.png" CssClass="card-img-top" PostBackUrl="~/Subject_Modify.aspx" />

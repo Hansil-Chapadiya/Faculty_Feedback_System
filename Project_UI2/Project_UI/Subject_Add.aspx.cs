@@ -13,12 +13,34 @@ namespace Project_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                String sessionId = HttpContext.Current.Session.SessionID;
+                if (Session["sid"].ToString() == sessionId)
+                {
+                    if (Session["role_id"].ToString() == "1")
+                    {
+
+                    }
+                    else
+                    {
+                        Response.Redirect("login1.aspx");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("login1.aspx");
+            }
+
+            //-------------------------------------------------------------------------------------------------------------------------------
+
             if (!IsPostBack)
             {
                 SqlConnection cn = new SqlConnection();
                 //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
                 //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
+                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";;Integrated Security=True";
                 //Session["team_id"]
                 String sql = "Select User_id,First_name from User_ where Role_id != 3 ";
                 cn.Open();

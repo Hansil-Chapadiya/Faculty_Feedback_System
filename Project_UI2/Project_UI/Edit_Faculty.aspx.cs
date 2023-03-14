@@ -13,27 +13,33 @@ namespace Project_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    String sessionId = HttpContext.Current.Session.SessionID;
-            //    if (Session["sid"].ToString() == sessionId)
-            //    {
-            //        Label1.Text = Session["User_id"].ToString();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Response.Redirect("login1.aspx");
-            //}
+            try
+            {
+                String sessionId = HttpContext.Current.Session.SessionID;
+                if (Session["sid"].ToString() == sessionId)
+                {
+                    if (Session["role_id"].ToString() == "1")
+                    {
 
-            //d2.Visible = false;
+                    }
+                    else
+                    {
+                        Response.Redirect("login1.aspx");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("login1.aspx");
+            }
+
             d2.Visible = false;
         }
 
         protected void modify_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + 123 + ";Integrated Security=True";
+            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog="+Session["team_id"]+";Integrated Security=True";
             //Session["team_id"]
             try
             {
@@ -75,7 +81,7 @@ namespace Project_UI
         protected void Update_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + 123 + ";Integrated Security=True";
+            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";Integrated Security=True";
             //Session["team_id"]
             String qstr = "update User_ set User_id = '" + team_id.Text + "',First_name ='" + fname.Text + "',Middle_name='" + mname.Text + "',Last_name= '" + lname.Text + "', Email ='" + email.Text + "' where User_id = '" + fac_id.Text + "'";
             cn.Open();

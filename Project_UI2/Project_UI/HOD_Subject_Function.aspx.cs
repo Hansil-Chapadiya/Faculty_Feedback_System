@@ -11,7 +11,25 @@ namespace Project_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                String sessionId = HttpContext.Current.Session.SessionID;
+                if (Session["sid"].ToString() == sessionId)
+                {
+                    if (Session["role_id"].ToString() == "1")
+                    {
 
+                    }
+                    else
+                    {
+                        Response.Redirect("login1.aspx");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("login1.aspx");
+            }
         }
     }
 }

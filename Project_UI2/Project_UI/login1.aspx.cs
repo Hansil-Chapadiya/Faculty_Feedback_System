@@ -52,6 +52,7 @@ namespace Project
                                 Session["User_id"] = TextBox1.Text;
                                 Session["sid"] = sessionId;
                                 Session["team_id"] = "HOD" + TextBox4.Text;
+                                Session["role_id"] = dr.GetString(2).ToString();
                                 Response.Redirect("HOD_HomePage.aspx");
                                 dr.Close();
                                 cmd.Dispose();
@@ -62,6 +63,7 @@ namespace Project
                                 Session["User_id"] = TextBox1.Text;
                                 Session["sid"] = sessionId;
                                 Session["team_id"] = "HOD" + TextBox4.Text;
+                                Session["role_id"] = dr.GetString(2).ToString();
                                 Response.Redirect("FACULTY_HomePage.aspx");
                                 dr.Close();
                                 cmd.Dispose();
@@ -72,6 +74,7 @@ namespace Project
                                 Session["User_id"] = TextBox1.Text;
                                 Session["sid"] = sessionId;
                                 Session["team_id"] = "HOD" + TextBox4.Text;
+                                Session["role_id"] = dr.GetString(2).ToString();
                                 Response.Redirect("STUDENT_HomePage.aspx");
                                 dr.Close();
                                 cmd.Dispose();

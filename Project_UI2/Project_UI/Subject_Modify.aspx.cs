@@ -13,12 +13,34 @@ namespace Project_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                String sessionId = HttpContext.Current.Session.SessionID;
+                if (Session["sid"].ToString() == sessionId)
+                {
+                    if (Session["role_id"].ToString() == "1")
+                    {
+
+                    }
+                    else
+                    {
+                        Response.Redirect("login1.aspx");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("login1.aspx");
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------
+
             if (!IsPostBack)
             {
                 SqlConnection cn = new SqlConnection();
                 //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
                 //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
+                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";Integrated Security=True";
                 //Session["team_id"]
                 String sql = "Select * from Subject  ";
                 String User_str = "Select * from User_ where Role_id != 3";
@@ -85,7 +107,7 @@ namespace Project_UI
             SqlConnection cn = new SqlConnection();
             //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
             //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
+            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";;Integrated Security=True";
             //Session["team_id]
             string str = "Update Subject set Faculty_id = '" + DropDownList3.SelectedItem + "' , Faculty_name= '" + DropDownList4.SelectedItem + "' where Subject_code = '" + DropDownList1.SelectedItem + "'";
             cn.Open();

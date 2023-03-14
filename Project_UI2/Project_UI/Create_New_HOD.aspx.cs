@@ -26,7 +26,8 @@ namespace Project_UI
             // Creating new database for new system.
 
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
+            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
+            //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
             //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
 
             try
@@ -45,7 +46,8 @@ namespace Project_UI
                     {
                         cn.Close();
                         datastr = (TextBox1.Text);
-                        cn = new SqlConnection("Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + datastr + ";Integrated Security=True");
+                        cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + datastr + ";Integrated Security=True";
+                        //cn = new SqlConnection("Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + datastr + ";Integrated Security=True");
                         //cn = new SqlConnection("Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=HOD" + datastr + ";Integrated Security=True");
                         cn.Open();
                         datastr = @"CREATE TABLE User_ (User_id decimal(18, 0) PRIMARY KEY,First_name VARCHAR(MAX) NOT NULL,Middle_name VARCHAR(MAX) NOT NULL,Last_name VARCHAR(MAX) NOT NULL,Role_id VARCHAR(MAX) NOT NULL,Password VARCHAR(MAX) NOT NULL,Email VARCHAR(MAX) NOT NULL,Team_id VARCHAR(8) NOT NULL);";
@@ -104,7 +106,8 @@ namespace Project_UI
             if (user_id.Length > 0 && password.Length > 0)
             {
                 SqlConnection cnn = new SqlConnection();
-                cnn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=" + str + ";Integrated Security=True";
+                cnn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + str + ";Integrated Security=True";
+                //cnn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=" + str + ";Integrated Security=True";
                 //cnn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=" + str + ";Integrated Security=True";
                 cnn.Open();
                 string qstring2 = "insert into User_ values ('" + user + "', '" + fname + "' , '" + mname + "' , '" + lname + "', '" + DropDownList1.SelectedValue + "', '" + pass + "','" + TextBox8.Text + "','" + str + "') ";

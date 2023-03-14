@@ -90,7 +90,7 @@
                     <strong class="d-inline-block mb-2 text-success">Subjects</strong>
                     <h3 class="mb-0">Mapping Subjects</h3>
                     <p class="card-text mb-auto">In this Head of Department can mapping the subject to their faculty.</p>
-                    <asp:Button ID="Button3" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" />
+                    <asp:Button ID="Button3" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" PostBackUrl="~/HOD_Subject_Function.aspx" />
                 </div>
                 <div class="col-auto d-none d-lg-block">
                     <asp:Image ID="Image3" ImageUrl="~/Images/Subjects.png" class="bd-placeholder-img" Width="200" Height="250" runat="server" />

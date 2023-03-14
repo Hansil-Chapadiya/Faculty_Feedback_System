@@ -15,18 +15,26 @@ namespace Project_UI
         String team_id; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    String sessionId = HttpContext.Current.Session.SessionID;
-            //    if (Session["sid"].ToString() == sessionId)
-            //    {
-            //        Label1.Text = Session["User_id"].ToString();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Response.Redirect("login1.aspx");
-            //}
+            try
+            {
+                String sessionId = HttpContext.Current.Session.SessionID;
+                if (Session["sid"].ToString() == sessionId)
+                {
+                    if (Session["role_id"].ToString() == "1")
+                    {
+
+                    }
+                    else
+                    {
+                        Response.Redirect("login1.aspx");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("login1.aspx");
+            }
+
             HttpCookie ck_team = Request.Cookies["Team_id"];
             team_id = ck_team["Team_id"].ToString();
 

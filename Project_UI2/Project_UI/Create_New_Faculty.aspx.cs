@@ -19,18 +19,25 @@ namespace Project_UI
         long user;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    String sessionId = HttpContext.Current.Session.SessionID;
-            //    if (Session["sid"].ToString() == sessionId)
-            //    {
-            //        Label1.Text = Session["User_id"].ToString();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Response.Redirect("login1.aspx");
-            //}
+            try
+            {
+                String sessionId = HttpContext.Current.Session.SessionID;
+                if (Session["sid"].ToString() == sessionId)
+                {
+                    if (Session["role_id"].ToString() == "1")
+                    {
+
+                    }
+                    else
+                    {
+                        Response.Redirect("login1.aspx");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                Response.Redirect("login1.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
