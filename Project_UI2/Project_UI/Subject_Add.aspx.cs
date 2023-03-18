@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Project_UI
 {
@@ -40,8 +41,11 @@ namespace Project_UI
                 SqlConnection cn = new SqlConnection();
                 //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
                 //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";;Integrated Security=True";
+                //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";;Integrated Security=True";
                 //Session["team_id"]
+                string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+                string conString = connectionString.Replace("Project", Session["team_id"].ToString());
+                cn.ConnectionString = conString;
                 String sql = "Select User_id,First_name from User_ where Role_id != 3 ";
                 cn.Open();
                 try

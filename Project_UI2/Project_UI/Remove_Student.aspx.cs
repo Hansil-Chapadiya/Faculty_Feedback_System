@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Project_UI
 {
@@ -38,8 +39,11 @@ namespace Project_UI
             try
             {
                 SqlConnection cn = new SqlConnection();
-                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";Integrated Security=True";
-                cn.Open();
+                //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";Integrated Security=True";
+                //cn.Open();
+                string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+                string conString = connectionString.Replace("Project", Session["team_id"].ToString());
+                cn.ConnectionString = conString;
                 String qstr = "delete from User_ where User_id='" + TextBox5.Text + "' AND Role_id ='" + 3 + "' ";
                 try
                 {

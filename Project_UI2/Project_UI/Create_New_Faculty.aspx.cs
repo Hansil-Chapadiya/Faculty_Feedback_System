@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
+using System.Configuration;
 
 namespace Project_UI
 {
@@ -54,8 +55,11 @@ namespace Project_UI
             if (user_id.Length > 0 && password.Length > 0)
             {
                 SqlConnection cn = new SqlConnection();
-                //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
-                cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + TextBox1.Text + ";Integrated Security=True";
+                string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+                string conString = connectionString.Replace("Project", Session["team_id"].ToString());
+                cn.ConnectionString = conString;
+                //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=HOD" + TextBox1.Text + ";Integrated Security=True";
+                //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + TextBox1.Text + ";Integrated Security=True";
                 //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
 
                 cn.Open();

@@ -50,8 +50,8 @@ namespace Project_UI
             String year = "Year_" + DropDownList2.SelectedItem.ToString();
             SqlConnection cn = new SqlConnection();
 
-            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + team_id + ";Integrated Security=True";
-            //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=" + team_id + ";Integrated Security=True";
+            //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + team_id + ";Integrated Security=True";
+            cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=" + team_id + ";Integrated Security=True";
 
             //Session["team_id"];
 

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
 namespace Project_UI
 {
     public partial class Edit_Student : System.Web.UI.Page
@@ -37,9 +38,10 @@ namespace Project_UI
         protected void modify_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";Integrated Security=True";
-            //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD123;Integrated Security=True";
-            //Session["team_id"]
+            //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+            string conString = connectionString.Replace("Project", Session["team_id"].ToString());
+            cn.ConnectionString = conString;
             try
             {
                 cn.Open();
@@ -80,8 +82,10 @@ namespace Project_UI
         protected void Button2_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";Integrated Security=True";
-            //Session["team_id"]
+            //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+            string conString = connectionString.Replace("Project", Session["team_id"].ToString());
+            cn.ConnectionString = conString;
             String qstr = "update User_ set User_id = '" + team_id.Text + "',First_name ='" + fname.Text + "',Middle_name='" + mname.Text + "',Last_name= '" + lname.Text + "', Email ='" + email.Text + "' where User_id = '" + er_no.Text + "'";
             cn.Open();
             try

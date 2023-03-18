@@ -79,6 +79,7 @@
     <Content Include="Edit_Student.aspx" />
     <Content Include="FACULTY_HomePage.aspx" />
     <Content Include="Forget_Password1.aspx" />
+    <Content Include="FormStatic.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HODStyle.css" />
     <Content Include="HOD_Faculty_Function.aspx" />
@@ -90,6 +91,7 @@
     <Content Include="Images\Chart.jpeg" />
     <Content Include="Images\Details.jpg" />
     <Content Include="Images\Edit_Faculty.jpg" />
+    <Content Include="Images\excel.png" />
     <Content Include="Images\fac1.png" />
     <Content Include="Images\Fac2.png" />
     <Content Include="Images\HOD.png" />
@@ -108,6 +110,7 @@
     <Content Include="removefaculty.css" />
     <Content Include="Remove_Faculty.aspx" />
     <Content Include="Remove_Student.aspx" />
+    <Content Include="Student_Add_methods.aspx" />
     <Content Include="STUDENT_HomePage.aspx" />
     <Content Include="Student_Sem_Year.aspx" />
     <Content Include="Subjects.css" />
@@ -172,6 +175,13 @@
     </Compile>
     <Compile Include="Forget_Password1.aspx.designer.cs">
       <DependentUpon>Forget_Password1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormStatic.aspx.cs">
+      <DependentUpon>FormStatic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormStatic.aspx.designer.cs">
+      <DependentUpon>FormStatic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,6 +249,13 @@
     </Compile>
     <Compile Include="Remove_Student.aspx.designer.cs">
       <DependentUpon>Remove_Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Add_methods.aspx.cs">
+      <DependentUpon>Student_Add_methods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student_Add_methods.aspx.designer.cs">
+      <DependentUpon>Student_Add_methods.aspx</DependentUpon>
     </Compile>
     <Compile Include="STUDENT_HomePage.aspx.cs">
       <DependentUpon>STUDENT_HomePage.aspx</DependentUpon>
