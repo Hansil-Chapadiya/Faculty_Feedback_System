@@ -75,6 +75,7 @@
     <Content Include="Create_New_Faculty.aspx" />
     <Content Include="Create_New_HOD.aspx" />
     <Content Include="Create_New_Student.aspx" />
+    <Content Include="Create_Student_Excel.aspx" />
     <Content Include="Edit_Faculty.aspx" />
     <Content Include="Edit_Student.aspx" />
     <Content Include="FACULTY_HomePage.aspx" />
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="Create_New_Student.aspx.designer.cs">
       <DependentUpon>Create_New_Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Student_Excel.aspx.cs">
+      <DependentUpon>Create_Student_Excel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create_Student_Excel.aspx.designer.cs">
+      <DependentUpon>Create_Student_Excel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Edit_Faculty.aspx.cs">
       <DependentUpon>Edit_Faculty.aspx</DependentUpon>
@@ -305,6 +313,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ExcelFile\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

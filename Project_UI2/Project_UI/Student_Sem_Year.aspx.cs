@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
+using System.Configuration;
 
 namespace Project_UI
 {
@@ -51,8 +52,10 @@ namespace Project_UI
             SqlConnection cn = new SqlConnection();
 
             //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + team_id + ";Integrated Security=True";
-            cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=" + team_id + ";Integrated Security=True";
-
+            //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=" + team_id + ";Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+            string conString = connectionString.Replace("Project", Session["team_id"].ToString());
+            cn.ConnectionString = conString;
             //Session["team_id"];
 
             String Create_qstr = @"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name=" + "'" + year + "'" + "and xtype='U')CREATE TABLE " + year + " (User_id decimal(18, 0) NOT NULL, Sem VARCHAR(20) NOT NULL)";
@@ -69,7 +72,7 @@ namespace Project_UI
                 ck["Sem"] = DropDownList1.SelectedItem.Text;
 
                 Response.Cookies.Add(ck);
-                Response.Redirect("./Create_New_Student.aspx");
+                Response.Redirect("./Student_Add_methods.aspx");
             }
             catch (Exception ex)
             {

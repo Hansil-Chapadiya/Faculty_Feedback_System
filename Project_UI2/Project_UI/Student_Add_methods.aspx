@@ -16,11 +16,11 @@
                 </div>
                 <div class="d-flex justify-content-center col m-4">
                     <div class="card" style="width: 18rem;">
-                        <asp:ImageButton ID="FacultyRoleImg" runat="server" ImageUrl="~/Images/excel.png" CssClass="card-img-top" PostBackUrl="~/Remove_Faculty.aspx" />
+                        <asp:ImageButton ID="FacultyRoleImg" runat="server" ImageUrl="~/Images/excel.png" CssClass="card-img-top" PostBackUrl="~/Create_Student_Excel.aspx" />
                         <div class="card-body">
                             <h5 class="card-title">Add Using Excel Sheet</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="Remove_Faculty.aspx" class="btn btn-lg btn-outline-light lin">Upload</a>
+                            <a href="Create_Student_Excel.aspx" class="btn btn-lg btn-outline-light lin">Upload</a>
                         </div>
                     </div>
                 </div>

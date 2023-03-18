@@ -29,8 +29,8 @@ namespace Project
                 SqlConnection cn = new SqlConnection();
                 try
                 {
-                    //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
-                    cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
+                    cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
+                    //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
                     //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
 
                     cn.Open();
