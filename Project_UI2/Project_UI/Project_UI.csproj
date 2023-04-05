@@ -107,7 +107,9 @@
     <Content Include="Images\Subjects.png" />
     <Content Include="Images\Subject_Edit.png" />
     <Content Include="login1.aspx" />
+    <Content Include="LoginCSS.css" />
     <Content Include="loginstyle.css" />
+    <Content Include="Login_New.aspx" />
     <Content Include="removefaculty.css" />
     <Content Include="Remove_Faculty.aspx" />
     <Content Include="Remove_Student.aspx" />
@@ -221,6 +223,13 @@
     </Compile>
     <Compile Include="login1.aspx.designer.cs">
       <DependentUpon>login1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_New.aspx.cs">
+      <DependentUpon>Login_New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_New.aspx.designer.cs">
+      <DependentUpon>Login_New.aspx</DependentUpon>
     </Compile>
     <Compile Include="Navigation.Master.cs">
       <DependentUpon>Navigation.Master</DependentUpon>
