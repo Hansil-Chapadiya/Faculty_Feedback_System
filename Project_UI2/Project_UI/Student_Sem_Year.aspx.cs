@@ -27,13 +27,13 @@ namespace Project_UI
                     }
                     else
                     {
-                        Response.Redirect("login1.aspx");
+                        Response.Redirect("Login_New.aspx");
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Response.Redirect("login1.aspx");
+                Response.Redirect("Login_New.aspx");
             }
 
             HttpCookie ck_team = Request.Cookies["Team_id"];

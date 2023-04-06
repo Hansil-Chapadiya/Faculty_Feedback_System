@@ -23,13 +23,13 @@ namespace Project_UI
                     }
                     else
                     {
-                        Response.Redirect("login1.aspx");
+                        Response.Redirect("Login_New.aspx");
                     }
                 }
             }
             catch (Exception ex)
             {
-                Response.Redirect("login1.aspx");
+                Response.Redirect("Login_New.aspx");
             }
 
             d2.Visible = false;
