@@ -19,7 +19,7 @@ body {
 .container {
     max-width: 440px;
     padding: 0 20px;
-    margin: 160px auto;
+    margin: 120px auto;
 }
 
 .wrapper {
@@ -53,7 +53,7 @@ body {
             position: relative;
         }
 
-            .wrapper form .row input {
+            .wrapper form .row input, .dropdown{
                 height: 100%;
                 width: 100%;
                 outline: none;
@@ -63,6 +63,17 @@ body {
                 font-size: 16px;
                 transition: all 0.3s ease;
             }
+/*
+.dropdown {
+    height: 300%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}*/
 
 form .row input:focus {
     border-color: #16a085;

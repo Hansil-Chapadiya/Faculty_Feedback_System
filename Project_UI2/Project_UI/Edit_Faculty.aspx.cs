@@ -30,7 +30,7 @@ namespace Project_UI
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Response.Redirect("Login_New.aspx");
             }

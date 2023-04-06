@@ -73,7 +73,7 @@ namespace Project
                 }
                 conn.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //Response.Write("<script>alert('" + ex.Message + "');</script>");
                 Response.Write("<script>alert('Team Id is not existing in this system!');</script>");

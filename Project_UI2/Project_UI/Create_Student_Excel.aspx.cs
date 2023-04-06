@@ -17,8 +17,8 @@ namespace Project_UI
         static String fname = "";
         static String lname = "";
         static String mname = "";
-        string user_id = "";
-        long user;
+        //string user_id = "";
+        //long user;
         long er_id;
         String sem;
         String year;

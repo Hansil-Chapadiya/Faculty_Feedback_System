@@ -17,7 +17,7 @@ namespace Project_UI
         static String lname = "";
         static String mname = "";
         string user_id = "";
-        long user;
+        //long user;
         String sem;
         String year;
         protected void Page_Load(object sender, EventArgs e)

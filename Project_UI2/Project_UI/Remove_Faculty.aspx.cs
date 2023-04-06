@@ -28,7 +28,7 @@ namespace Project_UI
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Response.Redirect("Login_New.aspx");
             }
@@ -55,12 +55,12 @@ namespace Project_UI
                     TextBox5.Text = "";
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Response.Write("<script>alert('Failed to Delete Faculty !');</script>");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Response.Write("<script>alert('Team id is not set !');</script>");
             }
