@@ -55,17 +55,17 @@ namespace Project_UI
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();
                         //-------------------------------------------------------------------------------
-                        String str1 = @"CREATE TABLE Faculty (Fac_id numeric(10) PRIMARY KEY,  User_id decimal(18, 0) NOT NULL,  FOREIGN KEY (User_id) REFERENCES User_(User_id));";
+                        String str1 = @"CREATE TABLE Faculty (Fac_id numeric(10) PRIMARY KEY, Faculty_Name varchar(20) NOT NULL);";
                         cmd = new SqlCommand(str1, cn);
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();
                         //--------------------------------------------------------------------------------
-                        str1 = @"CREATE TABLE Student (User_id decimal(18, 0) NOT NULL, Sem_no INTEGER NOT NULL);";
+                        str1 = @"CREATE TABLE Student (Enrollment_no decimal(18, 0) NOT NULL, Sem_no INTEGER NOT NULL);";
                         cmd = new SqlCommand(str1, cn);
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();
                         //--------------------------------------------------------------------------------
-                        str1 = @"CREATE TABLE Subject (Subject_code numeric(7) PRIMARY KEY, Feedback_id numeric(20) NOT NULL, Subject_name varchar(20) NOT NULL,Feedback_status bit NOT NULL,Feedback_details Varchar(200) NOT NULL);";
+                        str1 = @"CREATE TABLE Subject (Subject_code numeric(7) PRIMARY KEY, Subject_name varchar(20) NOT NULL,Faculty_id numeric(7) NOT NULL,Faculty_Name varchar(20) NOT NULL,Feedback_status bit);";
                         cmd = new SqlCommand(str1, cn);
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();

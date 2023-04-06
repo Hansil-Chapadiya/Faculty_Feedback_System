@@ -78,18 +78,20 @@ namespace Project_UI
             SqlConnection cn = new SqlConnection();
             //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
             //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + 123 + ";Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+            string conString = connectionString.Replace("Project", Session["team_id"].ToString());
+            cn.ConnectionString = conString; 
             //Session["team_id"]
-            String Insert_str = "Insert into Subject values ('" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + DropDownList2.SelectedItem + "', '" + DropDownList3.SelectedItem + "', '" + DropDownList1.SelectedValue + "') ";
+            String Insert_str = "Insert into Subject values ('" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + DropDownList2.SelectedItem + "', '" + DropDownList3.SelectedItem + "', '" + DropDownList1.SelectedValue + "',0) ";
             cn.Open();
             try
             {
                 SqlCommand cmd = new SqlCommand(Insert_str, cn);
                 cmd.ExecuteNonQuery();
-                TextBox1.Text = "";
-                TextBox2.Text = "";
                 cmd.Dispose();
                 cn.Close();
+                TextBox1.Text = "";
+                TextBox2.Text = "";
                 Response.Write("<script>alert('New Subject is created !!');</script>");
 
             }

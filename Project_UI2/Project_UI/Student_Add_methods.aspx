@@ -10,7 +10,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Add Manually</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="Create_New_Faculty.aspx" class="btn btn-lg btn-outline-light lin">Add</a>
+                            <a href="Create_New_Student.aspx" class="btn btn-lg btn-outline-light lin">Add</a>
                         </div>
                     </div>
                 </div>

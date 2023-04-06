@@ -58,11 +58,11 @@ namespace Project_UI
             cn.ConnectionString = conString;
             //Session["team_id"];
 
-            String Create_qstr = @"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name=" + "'" + year + "'" + "and xtype='U')CREATE TABLE " + year + " (User_id decimal(18, 0) NOT NULL, Sem VARCHAR(20) NOT NULL)";
+            String Create_qstr = @"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name=" + "'" + year + "'" + "and xtype='U')CREATE TABLE " + year + " (User_id decimal(18, 0) NOT NULL, Sem VARCHAR(20) NOT NULL,Question1 VARCHAR(10),Question2 VARCHAR(10),Question3 VARCHAR(10),Question4 VARCHAR(10),Question5 VARCHAR(10),Questio6 VARCHAR(10),Question7 VARCHAR(10),Question8 VARCHAR(10),Question9 VARCHAR(10),Question10 VARCHAR(10))";
 
-            cn.Open();
             try
             {
+                cn.Open();
                 SqlCommand cmd = new SqlCommand(Create_qstr, cn);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -77,6 +77,7 @@ namespace Project_UI
             catch (Exception ex)
             {
                 string text = ex.Message;
+                Response.Write("<script>alert('" +ex.Message + "')</script>");
             }
         }
     }

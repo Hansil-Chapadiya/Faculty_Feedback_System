@@ -134,6 +134,6 @@
         <asp:ListItem Value="1">Very Poor </asp:ListItem>
     </asp:RadioButtonList>
     <br />
-        <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn btn-dark btn-lg  mb-5 w-100"/>
+        <asp:Button ID="Button1" runat="server" Text="Assign to Students" CssClass="btn btn-dark btn-lg  mb-5 w-100" OnClick="Button1_Click"/>
     </div>
 </asp:Content>

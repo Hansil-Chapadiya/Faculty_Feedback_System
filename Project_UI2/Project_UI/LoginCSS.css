@@ -9,7 +9,6 @@
 /*#1abc9c*/
 body {
     /*background: #1abc9c;*/
-    background: #f046ff;
     overflow: hidden;
 }
 
@@ -34,7 +33,7 @@ body {
         height: 90px;
         /*#16a085*/
         background: #9b00e8;
-        background-image: linear-gradient(30deg,#f046ff,#9b00e8);
+        /*background-image: linear-gradient(30deg,#f046ff,#9b00e8);*/
         border-radius: 5px 5px 0 0;
         color: #fff;
         font-size: 30px;

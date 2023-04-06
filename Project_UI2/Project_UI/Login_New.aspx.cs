@@ -39,7 +39,6 @@ namespace Project_UI
                         pass2 = dr.GetString(1);
                         tpassword = pass2;
                     }
-                    dr.Close();
                     cmd.Dispose();
                     if (pass1 == tpassword)
                     {

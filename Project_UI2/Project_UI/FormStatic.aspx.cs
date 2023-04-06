@@ -13,5 +13,10 @@ namespace Project_UI
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('Assigned Successfully!')</script>");
+        }
     }
 }
