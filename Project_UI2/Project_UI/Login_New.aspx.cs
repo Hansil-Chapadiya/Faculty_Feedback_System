@@ -29,8 +29,8 @@ namespace Project_UI
                 SqlConnection cn = new SqlConnection();
                 try
                 {
-                    cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
-                    //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
+                    //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
+                    cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(qstring, cn);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -61,20 +61,21 @@ namespace Project_UI
                                 try
                                 {
                                     dr.Close();
-                                    string str = "select User_id,Role_id from User_ where (Email = '" + user_email.Text + "' && Role_id='2') ";
-                                    cmd = new SqlCommand(str, cn);
-                                    dr = cmd.ExecuteReader();
-                                    if (dr.Read())
+                                    cmd.Dispose();
+                                    String str = "select User_id,Role_id from User_ where (Email = '" + user_email.Text + "' AND Role_id = '2') ";
+                                    SqlCommand cmd1 = new SqlCommand(str, cn);
+                                    SqlDataReader dr1 = cmd1.ExecuteReader();
+                                    if (dr1.Read())
                                     {
                                         String sessionId = HttpContext.Current.Session.SessionID;
                                         Session["User_id"] = user_email.Text;
                                         Session["sid"] = sessionId;
                                         Session["team_id"] = "HOD" + teamid.Text;
-                                        Session["role_id"] = dr.GetString(1).ToString();
-                                        Session["Fac_id"] = dr.GetValue(0);
+                                        Session["role_id"] = dr1.GetString(1).ToString();
+                                        Session["Fac_id"] = dr1.GetValue(0);
                                         Response.Redirect("FACULTY_HomePage.aspx");
-                                        dr.Close();
-                                        cmd.Dispose();
+                                        dr1.Close();
+                                        cmd1.Dispose();
                                     }
                                 }
                                 catch (Exception ex)

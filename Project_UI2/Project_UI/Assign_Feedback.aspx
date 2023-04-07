@@ -2,18 +2,137 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <div class="row mt-3 m-0">
-        <div class="col m-0 col-lg-6 col-sm-12">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-primary">Feedback form</strong>
-                    <h3 class="mb-0">Create Feedback</h3>
-                    <p class="card-text mb-auto">In this section Faulty can create feedback form for students.</p>
-                    <asp:Button ID="Button1" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" OnClick="Button1_Click" />
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <asp:Image ID="Image1" ImageUrl="~/Images/Fac2.png" class="bd-placeholder-img" Width="200" Height="250" runat="server" />
-                </div>
-            </div>
-        </div>
+      <div class="container w-75 fs-3">
+        <header class="display-1 d-flex justify-content-center alert">
+            FEEDBACK FORM
+        </header>
+    <p class="card-text">Q1: Has the Teacher covered entire Syllabus as prescibed by University ?</p>
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+    <p class="card-text">Q2: Has the Teacher covered relevant topics beyoud syllabus Syllabus ?</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q3: (a). Effectiveness of the teacher in terms of : Teaching Content / Course Content</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q4: (b). Effectiveness of the teacher in terms of : Communication Skills</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q5: (c). Effectiveness of the teacher in terms of : Use of teaching aids</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q6: Pace of which contents are covered</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q7: Motivation and inspiration for students to learn</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q8: (i). Support for the development of Students’ skill: Practical Demonstration</p>
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q9: (ii). Support for the development of Students’ skill: Hands on training</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q10: Clarity of expectations of students</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q11: Feedback provided on Students’ progress</p>
+
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+
+    <p class="card-text">Q10: Willingness to offer help and advice to students</p>
+    <asp:RadioButtonList runat="server" CssClass="form-check">
+        <asp:ListItem Value="5">Excellent</asp:ListItem>
+        <asp:ListItem Value="4">Very Good</asp:ListItem>
+        <asp:ListItem Value="3">Good</asp:ListItem>
+        <asp:ListItem Value="2">Poor</asp:ListItem>
+        <asp:ListItem Value="1">Very Poor </asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+        <asp:Button ID="Button1" runat="server" Text="Assign to Students" CssClass="btn btn-dark btn-lg  mb-5 w-100" OnClick="Button1_Click"/>
+    </div>
 </asp:Content>
