@@ -21,7 +21,7 @@ namespace Project_UI
                 {
                     if (Session["role_id"].ToString() == "2")
                     {
-                        Response.Write(Session["Fac_id"]);
+                        //Response.Write(Session["Fac_id"]);
                     }
                     else
                     {

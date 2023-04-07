@@ -19,7 +19,7 @@
                        <%-- <asp:Panel ID="Panel1" runat="server">
                             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                         </asp:Panel>--%>
-                        <div class="myLeftCtn" id="d1" runat="server" style="margin-top:190px;">
+                        <div class="myLeftCtn" id="d1" runat="server">
                             <%--<div id="d1" runat="server">--%>
                             <header>Forget Password</header>
                             <div class="form-group">
@@ -41,7 +41,7 @@
                             <asp:Button ID="Button1" runat="server" Text="Send OTP" class="butt" OnClick="Button1_Click"/>
                         </div>
 
-                        <div class="myLeftCtn" id="d2" runat="server"  style="margin-top:190px;">
+                        <div class="myLeftCtn" id="d2" runat="server">
                             <%--<div id="d1" runat="server">--%>
                             <header>Forget Password</header>
                             <div class="form-group">
@@ -55,7 +55,7 @@
                         </div>
 
 
-                        <div class="myLeftCtn" id="d3" runat="server"  style="margin-top:190px;">
+                        <div class="myLeftCtn" id="d3" runat="server">
                             <%--<div id="d1" runat="server">--%>
                             <header>Forget Password</header>
                             <div class="form-group">
