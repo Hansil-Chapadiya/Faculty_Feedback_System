@@ -80,12 +80,15 @@ namespace Project_UI
             //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
             string conString = connectionString.Replace("Project", Session["team_id"].ToString());
-            cn.ConnectionString = conString; 
+            cn.ConnectionString = conString;
             //Session["team_id"]
-            String Insert_str = "Insert into Subject values ('" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + DropDownList2.SelectedItem + "', '" + DropDownList3.SelectedItem + "', '" + DropDownList1.SelectedValue + "',0) ";
-            cn.Open();
+            int sub_code = Int32.Parse(TextBox1.Text);
+            String Insert_str = "Insert into Subject values (" + Int32.Parse(TextBox1.Text) + ",'" + TextBox2.Text  + "'," + Int32.Parse(DropDownList2.SelectedItem.Text) + ",'" + DropDownList3.SelectedItem.Text + "',0)";
+            //String Insert_str = "Insert into Subject values(3361501,'AJAVA',111,'Tarun',0)";
+           
             try
             {
+                cn.Open();
                 SqlCommand cmd = new SqlCommand(Insert_str, cn);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -95,9 +98,9 @@ namespace Project_UI
                 Response.Write("<script>alert('New Subject is created !!');</script>");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Write("<script>alert('Subject is allready created !!');</script>");
+                Response.Write("<script>alert('Subject is allready created !!'" + ex.Message + ");</script>");
             }
         }
 

@@ -16,7 +16,7 @@ namespace Project_UI
                 String sessionId = HttpContext.Current.Session.SessionID;
                 if (Session["sid"].ToString() == sessionId)
                 {
-                    if (Session["role_id"].ToString() == "1")
+                    if (Session["role_id"].ToString() == "2")
                     {
 
                     }

@@ -23,7 +23,7 @@ namespace Project_UI
             String tpassword = password.Text.ToString();
             String pass1 = encryption(tpassword);
             String pass2;
-            string qstring = "select Email,Password,Role_id  from User_ where (Email = '" + user_email.Text + "') ";
+            string qstring = "select Email,Password,Role_id,User_id from User_ where (Email = '" + user_email.Text + "') ";
             if (user_email.Text.Length > 0 && password.Text.Length > 0)
             {
                 SqlConnection cn = new SqlConnection();
@@ -58,14 +58,29 @@ namespace Project_UI
                             }
                             else if (dr.GetString(2) == "2")
                             {
-                                String sessionId = HttpContext.Current.Session.SessionID;
-                                Session["User_id"] = user_email.Text;
-                                Session["sid"] = sessionId;
-                                Session["team_id"] = "HOD" + teamid.Text;
-                                Session["role_id"] = dr.GetString(2).ToString();
-                                Response.Redirect("FACULTY_HomePage.aspx");
-                                dr.Close();
-                                cmd.Dispose();
+                                try
+                                {
+                                    dr.Close();
+                                    string str = "select User_id,Role_id from User_ where (Email = '" + user_email.Text + "' && Role_id='2') ";
+                                    cmd = new SqlCommand(str, cn);
+                                    dr = cmd.ExecuteReader();
+                                    if (dr.Read())
+                                    {
+                                        String sessionId = HttpContext.Current.Session.SessionID;
+                                        Session["User_id"] = user_email.Text;
+                                        Session["sid"] = sessionId;
+                                        Session["team_id"] = "HOD" + teamid.Text;
+                                        Session["role_id"] = dr.GetString(1).ToString();
+                                        Session["Fac_id"] = dr.GetValue(0);
+                                        Response.Redirect("FACULTY_HomePage.aspx");
+                                        dr.Close();
+                                        cmd.Dispose();
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Response.Write("<script>alert('Failed "+ ex.Message  + "');</script>");
+                                }
                             }
                             else
                             {

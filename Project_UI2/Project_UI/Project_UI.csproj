@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About_US.aspx" />
+    <Content Include="Assign_Feedback.aspx" />
     <Content Include="CreateNewStudent.css" />
     <Content Include="Create_New_Faculty.aspx" />
     <Content Include="Create_New_HOD.aspx" />
@@ -129,6 +130,13 @@
     </Compile>
     <Compile Include="About_US.aspx.designer.cs">
       <DependentUpon>About_US.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assign_Feedback.aspx.cs">
+      <DependentUpon>Assign_Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assign_Feedback.aspx.designer.cs">
+      <DependentUpon>Assign_Feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="Create_New_Faculty.aspx.cs">
       <DependentUpon>Create_New_Faculty.aspx</DependentUpon>

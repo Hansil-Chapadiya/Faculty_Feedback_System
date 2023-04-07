@@ -62,7 +62,7 @@
                     <strong class="d-inline-block mb-2 text-primary">Feedback form</strong>
                     <h3 class="mb-0">Create Feedback</h3>
                     <p class="card-text mb-auto">In this section Faulty can create feedback form for students.</p>
-                    <asp:Button ID="Button1" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" PostBackUrl="~/FormStatic.aspx" />
+                    <asp:Button ID="Button1" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link"  PostBackUrl="~/Assign_Feedback.aspx" />
                 </div>
                 <div class="col-auto d-none d-lg-block">
                     <asp:Image ID="Image1" ImageUrl="~/Images/Fac2.png" class="bd-placeholder-img" Width="200" Height="250" runat="server" />

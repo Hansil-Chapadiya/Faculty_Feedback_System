@@ -46,6 +46,8 @@ namespace Project_UI
             user_id = TextBox2.Text.ToString();
             user = Int64.Parse(TextBox2.Text.ToString());
             //user = Convert.ToInt64(TextBox1.Text);
+            String password = "faculty@123";
+            string pass = encryption(password);
             fname = TextBox5.Text;
             lname = TextBox6.Text;
             mname = TextBox7.Text;
@@ -60,7 +62,7 @@ namespace Project_UI
                 //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=HOD" + TextBox4.Text + ";Integrated Security=True";
 
                 cn.Open();
-                string qstring2 = "insert into User_ values ('" + user + "', '" + fname + "' , '" + mname + "' , '" + lname + "', '" + DropDownList1.SelectedValue + "', '" + "faculty@123" + "','" + TextBox8.Text + "','" + Session["team_id"] + "') ";
+                string qstring2 = "insert into User_ values ('" + user + "', '" + fname + "' , '" + mname + "' , '" + lname + "', '" + DropDownList1.SelectedValue + "', '" + pass + "','" + TextBox8.Text + "','" + Session["team_id"] + "') ";
                 string qstring1 = "insert into Faculty values ('" + user + "', '" + fname + "')";
                 string qstring = "select * from User_ where (User_id ='" + user_id + "') ";
                 SqlCommand cmd = new SqlCommand(qstring, cn);
@@ -102,6 +104,20 @@ namespace Project_UI
             {
                 Response.Write("<script>alert('Username and password is empty !');</script>");
             }
+        }
+        public string encryption(String password)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[] encrypt;
+            UTF8Encoding en = new UTF8Encoding();
+            encrypt = md5.ComputeHash(en.GetBytes(password));
+            StringBuilder encryptdata = new StringBuilder();
+            for (int i = 0; i < encrypt.Length; i++)
+            {
+                encryptdata.Append(encrypt[i]).ToString();
+            }
+            return encryptdata.ToString();
+
         }
     }
 }
