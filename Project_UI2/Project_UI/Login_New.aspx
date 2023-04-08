@@ -39,7 +39,7 @@
                         <asp:TextBox ID="password" runat="server" placeholder="Password" required="true" TextMode="Password"></asp:TextBox>
                 </div>
                 <div class="row" align="center">
-                    <cap:CaptchaControl ID="captcha1" runat="server" CaptchaLength="5" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="Low" CaptchaMinTimeout="3" CaptchaMaxTimeout="240" ForeColor="White" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678990abcdefghijklmnopqrstuvwxyz" Height="47px" Width="200px" />
+                    <cap:CaptchaControl ID="captcha1" runat="server" CaptchaLength="5" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="Low" CaptchaMinTimeout="3" CaptchaMaxTimeout="240" ForeColor="White" CaptchaChars="12345678990abcdefghijklmnopqrstuvwxyz" Height="47px" Width="200px" />
                     <br />
                 </div>
                 <div class="row">
@@ -55,6 +55,7 @@
                 <br />
                 <div class="pass" align="center"><a href="Forget_Password1.aspx">forgot password?</a></div>
                 <div class="signup-link">Not a User? <a href="Create_New_HOD.aspx">Signup now</a></div>
+                 <div class="signup-link">Go Back Home-><a href="HomePageFinal.aspx">HomePage</a></div>
             </form>
         </div>
     </div>

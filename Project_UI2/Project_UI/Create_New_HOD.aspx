@@ -73,7 +73,7 @@
                                 </asp:DropDownList>
                      </div>
                 <div class="row button">
-                    <asp:Button ID="Login" runat="server" Text="Login" OnClick="Button1_Click" />
+                    <asp:Button ID="Login" runat="server" Text="Create Account" OnClick="Button1_Click" />
                 </div>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Password Not Match!" Display="None" Text="" ControlToCompare="TextBox3" ControlToValidate="TextBox2"></asp:CompareValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Team ID Not Start with 0" Text="" Display="None" ValidationExpression="^[1-9][0-9]*$" ControlToValidate="TextBox1"></asp:RegularExpressionValidator>

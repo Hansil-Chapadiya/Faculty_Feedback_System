@@ -13,7 +13,7 @@ namespace Project
 {
     public partial class Forget_Password1 : System.Web.UI.Page
     {
-        static int otp = 0;
+        //static int otp = 0;
         decimal userName;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace Project
             d3.Visible = false;
             SqlConnection conn = new SqlConnection();
             Random rand = new Random();
-            otp = rand.Next(0, 1000000);
+            Session["otp"] = rand.Next(0, 1000000);
             try
             {
                 conn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + TextBox6.Text + ";Integrated Security=True";
@@ -49,7 +49,7 @@ namespace Project
                             MailMessage mailMessage = new MailMessage("pranavbhimani04@gmail.com", dataReader.GetString(6));
 
                             mailMessage.Subject = "OTP For Reset Password";
-                            mailMessage.Body = "Hey " + dataReader.GetString(1) + " Your One Time Password is " + otp.ToString() + " Please Don't Share With Anyone!";
+                            mailMessage.Body = "Hey " + dataReader.GetString(1) + " Your One Time Password is " + Session["otp"].ToString() + " Please Don't Share With Anyone!";
 
                             SmtpClient smtpClient = new SmtpClient();
                             smtpClient.Send(mailMessage);
@@ -82,7 +82,7 @@ namespace Project
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            if (TextBox5.Text == otp.ToString())
+            if (TextBox5.Text == Session["otp"].ToString())
             {
                 d1.Visible = false;
                 d2.Visible = false;
@@ -113,7 +113,7 @@ namespace Project
                 SqlCommand cmd = new SqlCommand(queryStr, conn);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
-                Response.Redirect("login1.aspx");
+                Response.Redirect("Login_New.aspx");
             }
             catch (Exception ex)
             {

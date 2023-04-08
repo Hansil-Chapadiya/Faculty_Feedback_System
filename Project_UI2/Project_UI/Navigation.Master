@@ -112,18 +112,17 @@
         </form>
         <nav class="navbar fixed-bottom navbar-expand-sm py-0" style="background-image: linear-gradient(45deg, #f046ff,#9b00e8);">
             <div class="container-fluid">
-                <a class="navbar-brand text-light" href="#">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <marquee><ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active text-light" aria-current="page" href="#">©Copyright</a>
+                            <a class="nav-link active text-light" aria-current="page" href="#">©Copyright, All Rights Reserved</a>
                         </li>
-                        <li class="nav-item">
+<%--                        <li class="nav-item">
                             <a class="nav-link text-light" href="#">Learn more</a>
-                        </li>
+                        </li>--%>
                     </ul></marquee>
                 </div>
             </div>
