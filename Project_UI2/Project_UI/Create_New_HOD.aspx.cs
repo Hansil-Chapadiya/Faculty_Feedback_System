@@ -60,7 +60,7 @@ namespace Project_UI
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();
                         //--------------------------------------------------------------------------------
-                        str1 = @"CREATE TABLE Student (Enrollment_no decimal(18, 0) NOT NULL, Sem_no INTEGER NOT NULL);";
+                        str1 = @"CREATE TABLE Student (Enrollment_no decimal(18, 0) NOT NULL, Sem_no varchar(7) NOT NULL);";
                         cmd = new SqlCommand(str1, cn);
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();

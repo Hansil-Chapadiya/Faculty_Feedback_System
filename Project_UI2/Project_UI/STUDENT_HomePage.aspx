@@ -14,20 +14,12 @@
                            <%-- <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                 Left-aligned but right aligned when large screen
                             </button>--%>
-                            <asp:DropDownList ID="DropDownList1" runat="server" class="btn btn-secondary dropdown-toggle"></asp:DropDownList>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="btn-group m-2">
-                           <%-- <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                Left-aligned but right aligned when large screen
-                            </button>--%>
-                            <asp:DropDownList ID="DropDownList2" runat="server" class="btn btn-secondary dropdown-toggle"></asp:DropDownList>
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <p class="lead">
-                    <a href="#" class="btn btn-lg btn-outline-light lin">Submit</a>
+                    <asp:Button ID="Button1" class="btn btn-lg btn-outline-light lin" runat="server" Text="Submit" OnClick="Button1_Click" />
                 </p>
             </div>
         </div>

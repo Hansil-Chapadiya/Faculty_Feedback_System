@@ -58,7 +58,7 @@ namespace Project_UI
             cn.ConnectionString = conString;
             //Session["team_id"];
 
-            String Create_qstr = @"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name=" + "'" + year + "'" + "and xtype='U')CREATE TABLE " + year + " (User_id decimal(18, 0) NOT NULL, Sem VARCHAR(20) NOT NULL,Question1 VARCHAR(10),Question2 VARCHAR(10),Question3 VARCHAR(10),Question4 VARCHAR(10),Question5 VARCHAR(10),Questio6 VARCHAR(10),Question7 VARCHAR(10),Question8 VARCHAR(10),Question9 VARCHAR(10),Question10 VARCHAR(10))";
+            String Create_qstr = @"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name=" + "'" + year + "'" + "and xtype='U')CREATE TABLE " + year + " (User_id decimal(18, 0) NOT NULL, Sem VARCHAR(20) NOT NULL, Subject_code numeric(7) ,Q1 VARCHAR(10),Q2 VARCHAR(10),Q3 VARCHAR(10),Q4 VARCHAR(10),Q5 VARCHAR(10),Q6 VARCHAR(10),Q7 VARCHAR(10),Q8 VARCHAR(10),Q9 VARCHAR(10),Q10 VARCHAR(10),Q11 VARCHAR(10),Q12 VARCHAR(10), show_status bit )";
 
             try
             {

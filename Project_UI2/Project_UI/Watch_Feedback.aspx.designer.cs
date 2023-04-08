@@ -11,7 +11,7 @@ namespace Project_UI
 {
 
 
-    public partial class FormStatic
+    public partial class Watch_Feedback
     {
 
         /// <summary>

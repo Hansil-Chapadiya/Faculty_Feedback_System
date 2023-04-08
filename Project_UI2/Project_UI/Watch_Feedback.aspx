@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Navigation.Master" AutoEventWireup="true" CodeBehind="FormStatic.aspx.cs" Inherits="Project_UI.FormStatic" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Navigation.Master" AutoEventWireup="true" CodeBehind="Watch_Feedback.aspx.cs" Inherits="Project_UI.Watch_Feedback" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -125,7 +124,7 @@
     </asp:RadioButtonList>
     <br />
 
-    <p class="card-text">Q12: Willingness to offer help and advice to students</p>
+    <p class="card-text">Q10: Willingness to offer help and advice to students</p>
     <asp:RadioButtonList runat="server" CssClass="form-check" ID="R12">
         <asp:ListItem Value="5">Excellent</asp:ListItem>
         <asp:ListItem Value="4">Very Good</asp:ListItem>
@@ -134,6 +133,6 @@
         <asp:ListItem Value="1">Very Poor </asp:ListItem>
     </asp:RadioButtonList>
     <br />
-        <asp:Button ID="Button1" runat="server" Text="Assign to Students" CssClass="btn btn-dark btn-lg  mb-5 w-100" OnClick="Button1_Click"/>
+        <asp:Button ID="Button1" runat="server" Text="Assign to Students" CssClass="btn btn-dark btn-lg  mb-5 w-100"/>
     </div>
 </asp:Content>

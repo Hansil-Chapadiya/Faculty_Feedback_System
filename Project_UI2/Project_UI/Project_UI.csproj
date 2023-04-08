@@ -77,6 +77,7 @@
     <Content Include="Create_New_HOD.aspx" />
     <Content Include="Create_New_Student.aspx" />
     <Content Include="Create_Student_Excel.aspx" />
+    <Content Include="Detail_Feedback.aspx" />
     <Content Include="Edit_Faculty.aspx" />
     <Content Include="Edit_Student.aspx" />
     <Content Include="FACULTY_HomePage.aspx" />
@@ -121,7 +122,9 @@
     <Content Include="Subject_Add.aspx" />
     <Content Include="Subject_Modify.aspx" />
     <Content Include="temp.aspx" />
+    <Content Include="Watch_Feedback.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Create_Feedback.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About_US.aspx.cs">
@@ -165,6 +168,13 @@
     </Compile>
     <Compile Include="Create_Student_Excel.aspx.designer.cs">
       <DependentUpon>Create_Student_Excel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail_Feedback.aspx.cs">
+      <DependentUpon>Detail_Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail_Feedback.aspx.designer.cs">
+      <DependentUpon>Detail_Feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="Edit_Faculty.aspx.cs">
       <DependentUpon>Edit_Faculty.aspx</DependentUpon>
@@ -316,6 +326,20 @@
     </Compile>
     <Compile Include="temp.aspx.designer.cs">
       <DependentUpon>temp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Feedback.aspx.cs">
+      <DependentUpon>Create_Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create_Feedback.aspx.designer.cs">
+      <DependentUpon>Create_Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Watch_Feedback.aspx.cs">
+      <DependentUpon>Watch_Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Watch_Feedback.aspx.designer.cs">
+      <DependentUpon>Watch_Feedback.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
