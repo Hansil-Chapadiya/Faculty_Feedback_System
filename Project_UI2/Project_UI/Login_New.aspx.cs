@@ -29,7 +29,8 @@ namespace Project_UI
                 SqlConnection cn = new SqlConnection();
                 try
                 {
-                    cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
+                    cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
+                    //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
                     //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(qstring, cn);

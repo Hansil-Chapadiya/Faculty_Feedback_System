@@ -49,11 +49,14 @@ namespace Project_UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            String password = "student@123";
+            string pass = encryption(password);
             fname = TextBox5.Text;
             lname = TextBox6.Text;
             mname = TextBox7.Text;
             user_id = TextBox2.Text.ToString();
             long er_id = Int64.Parse(TextBox2.Text);
+            String table_year = "Year_" + year;
             if (user_id.Length > 0)
             {
                 SqlConnection cn = new SqlConnection();
@@ -65,10 +68,10 @@ namespace Project_UI
                 //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=HOD" + TextBox1.Text + ";Integrated Security=True";
 
                 cn.Open();
-                string qstring2 = "insert into User_ values ('" + er_id + "', '" + fname + "' , '" + mname + "' , '" + lname + "', '" + DropDownList1.SelectedValue + "', '" + "student@123" + "','" + TextBox8.Text + "','" + Session["team_id"] + "') ";
-                //string qstring1 = "insert into Student values ('" + er_id + "', '" + sem + "')";
+                string qstring2 = "insert into User_ values ('" + er_id + "', '" + fname + "' , '" + mname + "' , '" + lname + "', '" + DropDownList1.SelectedValue + "', '" + pass + "','" + TextBox8.Text + "','" + Session["team_id"] + "') ";
+                string qstring1 = "insert into Student values ('" + er_id + "', '" + sem + "' , '" + table_year + "')";
                 string qstring = "select * from User_ where (User_id ='" + er_id + "') ";
-                String Insert_qstr = "insert into Year_" + year + " values (" + er_id + ",'" + sem + "',0,0,0,0,0,0,0,0,0,0)";
+                String Insert_qstr = "insert into Year_" + year + " values (" + er_id + ",'" + sem + "',0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
                 SqlCommand cmd = new SqlCommand(qstring, cn);
                 SqlDataReader dr1 = cmd.ExecuteReader();
                 if (dr1.Read())
@@ -85,20 +88,28 @@ namespace Project_UI
                         cmd.Dispose();
                         SqlCommand cmd2 = new SqlCommand(qstring2, cn);
                         cmd2.ExecuteNonQuery();
+                        cmd2.Dispose();
                         try
                         {
                             cmd2 = new SqlCommand(Insert_qstr, cn);
                             cmd2.ExecuteNonQuery();
-                            //SqlCommand cmd3 = new SqlCommand(qstring1, cn);
-                            //cmd3.ExecuteNonQuery();
                             cmd2.Dispose();
-                            //cmd3.Dispose();
+                            try
+                            {
+                                SqlCommand cmd3 = new SqlCommand(qstring1, cn);
+                                cmd3.ExecuteNonQuery();
+                                cmd3.Dispose();
+                            }
+                            catch (Exception ex)
+                            {
+                                Response.Write("123 " + ex.Message);
+                            }
                             TextBox2.Text = "";
                             Response.Write("<script>alert('Saved Successfully');</script>");
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
-                            Response.Write("<script>alert('Not inserted in Year table!');</script>");
+                            Response.Write(ex.Message);
                         }
                     }
                     catch (Exception)
@@ -112,7 +123,19 @@ namespace Project_UI
             {
                 Response.Write("<script>alert('Username and password is empty');</script>");
             }
-
+        }
+        public string encryption(String password)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[] encrypt;
+            UTF8Encoding en = new UTF8Encoding();
+            encrypt = md5.ComputeHash(en.GetBytes(password));
+            StringBuilder encryptdata = new StringBuilder();
+            for (int i = 0; i < encrypt.Length; i++)
+            {
+                encryptdata.Append(encrypt[i]).ToString();
+            }
+            return encryptdata.ToString();
 
         }
     }
