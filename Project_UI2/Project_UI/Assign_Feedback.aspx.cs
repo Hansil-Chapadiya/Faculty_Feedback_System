@@ -37,7 +37,7 @@ namespace Project_UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            String update_status = "Update Subject Set Feedback_status = 1 where faculty_id = "+ Session["Fac_id"];
+            String update_status = "Update Subject Set Form_Status = 1 where Subject_code = "+TextBox1.Text+"";
             SqlConnection cn = new SqlConnection();
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
             string conString = connectionString.Replace("Project", Session["team_id"].ToString());

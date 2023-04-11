@@ -49,7 +49,7 @@ namespace Project_UI
                             if (dr.GetString(2) == "1")
                             {
                                 String sessionId = HttpContext.Current.Session.SessionID;
-                                Session["User_id"] = user_email.Text;
+                                Session["User_id"] = dr.GetDecimal(3);
                                 Session["sid"] = sessionId;
                                 Session["team_id"] = "HOD" + teamid.Text;
                                 Session["role_id"] = dr.GetString(2).ToString();
@@ -69,7 +69,7 @@ namespace Project_UI
                                     if (dr1.Read())
                                     {
                                         String sessionId = HttpContext.Current.Session.SessionID;
-                                        Session["User_id"] = user_email.Text;
+                                        Session["User_id"] = dr1.GetValue(0);
                                         Session["sid"] = sessionId;
                                         Session["team_id"] = "HOD" + teamid.Text;
                                         Session["role_id"] = dr1.GetString(1).ToString();
@@ -87,10 +87,11 @@ namespace Project_UI
                             else
                             {
                                 String sessionId = HttpContext.Current.Session.SessionID;
-                                Session["User_id"] = user_email.Text;
+                                Session["User_id"] = dr.GetDecimal(3);
                                 Session["sid"] = sessionId;
                                 Session["team_id"] = "HOD" + teamid.Text;
                                 Session["role_id"] = dr.GetString(2).ToString();
+
                                 Response.Redirect("STUDENT_HomePage.aspx");
                                 dr.Close();
                                 cmd.Dispose();

@@ -65,7 +65,7 @@ namespace Project_UI
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();
                         //--------------------------------------------------------------------------------
-                        str1 = @"CREATE TABLE Subject (Subject_code numeric(7) PRIMARY KEY, Subject_name varchar(20) NOT NULL,Faculty_id numeric(7) NOT NULL,Faculty_Name varchar(20) NOT NULL,Feedback_status bit);";
+                        str1 = @"CREATE TABLE Subject (Subject_code numeric(7) PRIMARY KEY, Subject_name varchar(20) NOT NULL,Faculty_id numeric(7) NOT NULL,Faculty_Name varchar(20) NOT NULL,Form_Status bit NOT NULL);";
                         cmd = new SqlCommand(str1, cn);
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();

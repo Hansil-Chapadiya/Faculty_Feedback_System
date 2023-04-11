@@ -11,6 +11,7 @@ namespace Project_UI
 {
     public partial class FormStatic : System.Web.UI.Page
     {
+        String year1 = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -18,7 +19,7 @@ namespace Project_UI
                 String sessionId = HttpContext.Current.Session.SessionID;
                 if (Session["sid"].ToString() == sessionId)
                 {
-                    if (Session["role_id"].ToString() == "2")
+                    if (Session["role_id"].ToString() == "3")
                     {
 
                     }
@@ -32,6 +33,32 @@ namespace Project_UI
             {
                 Response.Redirect("Login_New.aspx");
             }
+
+            if (!IsPostBack)
+            {
+                SqlConnection cnn = new SqlConnection();
+                string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+                string conString = connectionString.Replace("Project", Session["team_id"].ToString());
+                cnn.ConnectionString = conString;
+                string Selectstr1 = "Select Year,Sem_no from Student where User_id = " + Session["User_id"] + "";
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(Selectstr1, cnn);
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        String year1 = dr.GetString(0).ToString();
+                    }
+                    dr.Close();
+                    cmd.Dispose();
+                    cnn.Close();
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("700 : " + ex.Message);
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -40,7 +67,7 @@ namespace Project_UI
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
             string conString = connectionString.Replace("Project", Session["team_id"].ToString());
             cn.ConnectionString = conString;
-            String Updatestr = "Update Year_2013 set Subject_code = " + Request.QueryString["sub_code"] + " " +
+            String Updatestr = "Update '"+year1+"' set Subject_code = " + Request.QueryString["sub_code"] + " " +
                                                                         ", Q1 = " + R1.SelectedValue + "" +
                                                                         ", Q2 = " + R2.SelectedValue + "" +
                                                                         ", Q3 = " + R3.SelectedValue + "" +
@@ -75,7 +102,7 @@ namespace Project_UI
                         String year = dr.GetString(0);
                         string sem = dr.GetString(1).ToString();
                         cmd.Dispose();
-                        Insertstr = "insert into " + year + " values (" + Int64.Parse(Session["User_id"].ToString()) + " , " + sem + ",0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
+                        Insertstr = "insert into " + year + " values (" + Int64.Parse(Session["User_id"].ToString()) + " , '" + sem + "',0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
                     }
                     dr.Close();
                     try

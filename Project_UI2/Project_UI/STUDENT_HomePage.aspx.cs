@@ -12,25 +12,25 @@ namespace Project_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    String sessionId = HttpContext.Current.Session.SessionID;
-            //    if (Session["sid"].ToString() == sessionId)
-            //    {
-            //        if (Session["role_id"].ToString() == "3")
-            //        {
+            try
+            {
+                String sessionId = HttpContext.Current.Session.SessionID;
+                if (Session["sid"].ToString() == sessionId)
+                {
+                    if (Session["role_id"].ToString() == "3")
+                    {
 
-            //        }
-            //        else
-            //        {
-            //            Response.Redirect("login1.aspx");
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Response.Redirect("login1.aspx");
-            //}
+                    }
+                    else
+                    {
+                        Response.Redirect("Login_New.aspx");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("Login_New.aspx");
+            }
 
             //-------------------------------------------------------------------------------------------------------------------------------------
 
@@ -40,9 +40,9 @@ namespace Project_UI
         {
             SqlConnection cn = new SqlConnection();
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
-            string conString = connectionString.Replace("Project", "HOD123");
+            string conString = connectionString.Replace("Project", Session["team_id"].ToString());
             cn.ConnectionString = conString;
-            string selectstr = "Select Form_status,Subject_code from Subject where Subject_code = " + TextBox1.Text + "";
+            string selectstr = "Select Form_Status,Subject_code from Subject where Subject_code = " + TextBox1.Text + "";
             try
             {
                 cn.Open();
