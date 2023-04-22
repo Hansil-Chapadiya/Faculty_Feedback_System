@@ -74,6 +74,11 @@ namespace Project_UI
                         cmd = new SqlCommand(str1, cn);
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();
+                        //---------------------------------------------------------------------------------
+                        str1 = @"CREATE TABLE [dbo].[Feedback]([Subject_code] [decimal](18, 0) PRIMARY KEY,[Q1] [varchar](max) NOT NULL,[Q2] [varchar](max) NOT NULL,[Q3] [varchar](max) NOT NULL,[Q4] [varchar](max) NOT NULL,[Q5] [varchar](max) NOT NULL,[Q6] [varchar](max) NOT NULL,[Q7] [varchar](max) NOT NULL,[Q8] [varchar](max) NOT NULL,[Q9] [varchar](max) NOT NULL,[Q10] [varchar](max) NOT NULL,[Q11] [varchar](max) NOT NULL,[Q12] [varchar](max) NOT NULL)";
+                        cmd = new SqlCommand(str1, cn);
+                        cmd.ExecuteNonQuery();
+                        cmd.Dispose();
                     }
                     catch (Exception)
                     {

@@ -41,7 +41,7 @@
                     <div class="carousel-caption text-center">
                         <h1 class="text-light">Leader Board</h1>
                         <p class="text-info"><b>Highest rating for perticular faculty given by students.</b></p>
-                        <p><a class="btn btn-lg btn-outline-light lin" href="#">Show Board</a></p>
+                        <p><a class="btn btn-lg btn-outline-light lin" href="Leader_Board.aspx">Show Board</a></p>
                     </div>
                 </div>
             </div>
