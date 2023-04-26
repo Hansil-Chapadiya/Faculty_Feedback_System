@@ -50,6 +50,11 @@ namespace Project_UI
                         Response.Redirect("Login_New.aspx");
                     }
                 }
+                var currentYear = DateTime.Today.Year;
+                for (int i = 10; i >= 0; i--)
+                {
+                    DropDownList3.Items.Add((currentYear - i).ToString());
+                }
             }
             catch (Exception)
             {
@@ -92,7 +97,7 @@ namespace Project_UI
                 }
                 catch (Exception ex)
                 {
-                    Response.Write(ex.Message);
+                    Response.Write("<script>alert(Subject is not Found /n)</script>");
                 }
             }
 
@@ -104,7 +109,8 @@ namespace Project_UI
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
             string conString = connectionString.Replace("Project", Session["team_id"].ToString());
             cn.ConnectionString = conString;
-            String sql = "Select * from Year_2013 where Subject_code = " + DropDownList2.SelectedItem + " ";
+            String year = "Year_" + DropDownList3.SelectedItem;
+            String sql = "Select * from " + year + " where Subject_code = " + DropDownList2.SelectedItem + " ";
             cn.Open();
 
             // Q1 ---------------------------------------------------------------------------------------------------
