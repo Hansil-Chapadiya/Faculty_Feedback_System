@@ -21,7 +21,7 @@ namespace Project_UI
         int very_good;
         int excellent;
         int count;
-        int maxvalue; 
+        int maxvalue;
         float per;
         float q2per;
         float q3per;
@@ -145,7 +145,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 per = (100 * sum) / maxvalue;
-                Response.Write("Count : "+ count +" Sum : "+ sum + " Per : " + per);
+                Response.Write("Count : " + count + " Sum : " + sum + " Per : " + per);
 
 
                 Response.Write("Very Poor = " + very_poor);
@@ -159,7 +159,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: "+ex.Message);
+                Response.Write("1: " + ex.Message);
             }
 
             //Q2 ----------------------------------------------------------------------------------------------------
@@ -168,11 +168,11 @@ namespace Project_UI
                 sum = 0;
                 poor = 0;
                 very_poor = 0;
-                good = 0 ;
+                good = 0;
                 very_good = 0;
                 excellent = 0;
-                count= 0;
-                maxvalue =0 ;
+                count = 0;
+                maxvalue = 0;
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -729,7 +729,7 @@ namespace Project_UI
             {
                 Response.Write("1: " + ex.Message);
             }
-            
+
 
             //Q12 ------------------------------------------------------------------------------------------------------
             try
@@ -790,7 +790,7 @@ namespace Project_UI
 
             SqlConnection cn2 = new SqlConnection();
             cn2.ConnectionString = conString;
-            String Insert_str = "Insert into Feedback values (" + DropDownList2.SelectedItem + " ," + per + ","+q2per+","+q3per+ "," + q4per + "," + q5per + "," + q6per + "," + q7per + "," + q8per + "," + q9per + "," + q10per + "," + q11per + "," + q12per + ")";
+            String Insert_str = "Insert into Feedback values (" + DropDownList2.SelectedItem + " ," + per + "," + q2per + "," + q3per + "," + q4per + "," + q5per + "," + q6per + "," + q7per + "," + q8per + "," + q9per + "," + q10per + "," + q11per + "," + q12per + ")";
             try
             {
                 cn2.Open();
@@ -806,7 +806,7 @@ namespace Project_UI
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DropDownList2.SelectedIndex= DropDownList1.SelectedIndex;
+            DropDownList2.SelectedIndex = DropDownList1.SelectedIndex;
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)

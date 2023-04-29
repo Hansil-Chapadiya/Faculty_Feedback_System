@@ -29,7 +29,7 @@
                     <div class="carousel-caption text-start">
                         <h1 class="text-light">Check Status</h1>
                         <p class="text-info"><b>Watch Status of Student's feedback.</b></p>
-                        <p><a class="btn btn-lg btn-outline-light lin" href="#">Check</a></p>
+                        <p><a class="btn btn-lg btn-outline-light lin" href="check_status.aspx">Check</a></p>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     <strong class="d-inline-block mb-2 text-danger">Check Status</strong>
                     <h3 class="mb-0">Check Status for student's feedback</h3>
                     <p class="card-text mb-auto">In this section Faculty can show that whether student feedback given or not.</p>
-                    <asp:Button ID="Button2" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" />
+                    <asp:Button ID="Button2" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" PostBackUrl="~/check_status.aspx" />
                 </div>
                 <div class="col-auto d-none d-lg-block">
                     <asp:Image ID="Image2" ImageUrl="~/Images/student.png" class="bd-placeholder-img" Width="200" Height="250" runat="server" />

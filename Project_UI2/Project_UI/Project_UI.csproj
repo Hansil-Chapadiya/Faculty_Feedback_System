@@ -93,6 +93,7 @@
   <ItemGroup>
     <Content Include="About_US.aspx" />
     <Content Include="Assign_Feedback.aspx" />
+    <Content Include="check_status.aspx" />
     <Content Include="CreateNewStudent.css" />
     <Content Include="Create_New_Faculty.aspx" />
     <Content Include="Create_New_HOD.aspx" />
@@ -148,6 +149,7 @@
     <Content Include="Web.config" />
     <Content Include="Create_Feedback.aspx" />
     <Content Include="Leader_Board.aspx" />
+    <Content Include="Show_table.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About_US.aspx.cs">
@@ -163,6 +165,13 @@
     </Compile>
     <Compile Include="Assign_Feedback.aspx.designer.cs">
       <DependentUpon>Assign_Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="check_status.aspx.cs">
+      <DependentUpon>check_status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="check_status.aspx.designer.cs">
+      <DependentUpon>check_status.aspx</DependentUpon>
     </Compile>
     <Compile Include="Create_New_Faculty.aspx.cs">
       <DependentUpon>Create_New_Faculty.aspx</DependentUpon>
@@ -377,6 +386,13 @@
     </Compile>
     <Compile Include="Leader_Board.aspx.designer.cs">
       <DependentUpon>Leader_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Show_table.aspx.cs">
+      <DependentUpon>Show_table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Show_table.aspx.designer.cs">
+      <DependentUpon>Show_table.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
