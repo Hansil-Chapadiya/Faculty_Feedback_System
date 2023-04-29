@@ -11,7 +11,7 @@ namespace Project_UI
 {
     public partial class FormStatic : System.Web.UI.Page
     {
-        String year1 = "";
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -36,11 +36,13 @@ namespace Project_UI
 
             if (!IsPostBack)
             {
+                //Response.Write(Session["User_id"]);
                 SqlConnection cnn = new SqlConnection();
                 string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
                 string conString = connectionString.Replace("Project", Session["team_id"].ToString());
                 cnn.ConnectionString = conString;
-                string Selectstr1 = "Select Year,Sem_no from Student where User_id = " + Session["User_id"] + "";
+                cnn.Open();
+                string Selectstr1 = "Select Year from Student where User_id = " + Session["User_id"] + "";
                 try
                 {
                     SqlCommand cmd = new SqlCommand(Selectstr1, cnn);
@@ -48,7 +50,8 @@ namespace Project_UI
                     SqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        String year1 = dr.GetString(0).ToString();
+                        Session["year"] = dr.GetString(0).ToString();
+                        Response.Write(Session["year"]);
                     }
                     dr.Close();
                     cmd.Dispose();
@@ -67,7 +70,8 @@ namespace Project_UI
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
             string conString = connectionString.Replace("Project", Session["team_id"].ToString());
             cn.ConnectionString = conString;
-            String Updatestr = "Update '"+year1+"' set Subject_code = " + Request.QueryString["sub_code"] + " " +
+            Response.Write( "This is  " + Session["year"].ToString());
+            String Updatestr = "Update "+ Session["year"] + " set Subject_code = '" + Request.QueryString["sub_code"] + "' " +
                                                                         ", Q1 = " + R1.SelectedValue + "" +
                                                                         ", Q2 = " + R2.SelectedValue + "" +
                                                                         ", Q3 = " + R3.SelectedValue + "" +
