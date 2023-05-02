@@ -17,7 +17,7 @@
                     <div class="carousel-caption text-end">
                         <h1 class="text-light">Send Notification </h1>
                         <p class="text-info"><b>Notification for feedback send to students.</b></p>
-                        <p><a class="btn btn-lg btn-outline-light lin" href="#">Send</a></p>
+                        <p><a class="btn btn-lg btn-outline-light lin" href="Send_Notification.aspx">Send</a></p>
                     </div>
                 </div>
             </div>

@@ -138,6 +138,7 @@
     <Content Include="removefaculty.css" />
     <Content Include="Remove_Faculty.aspx" />
     <Content Include="Remove_Student.aspx" />
+    <Content Include="Send_Notification.aspx" />
     <Content Include="Student_Add_methods.aspx" />
     <Content Include="STUDENT_HomePage.aspx" />
     <Content Include="Student_Sem_Year.aspx" />
@@ -323,6 +324,13 @@
     </Compile>
     <Compile Include="Remove_Student.aspx.designer.cs">
       <DependentUpon>Remove_Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Send_Notification.aspx.cs">
+      <DependentUpon>Send_Notification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Send_Notification.aspx.designer.cs">
+      <DependentUpon>Send_Notification.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student_Add_methods.aspx.cs">
       <DependentUpon>Student_Add_methods.aspx</DependentUpon>
