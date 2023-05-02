@@ -5,7 +5,10 @@
       <div class="container w-75 fs-3">
     <br />
 
-          Enter the Subject Code : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+          <%--Enter the Subject Code : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>--%>
+          <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+          <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+          </asp:DropDownList>
     <br />
     <br />
 
