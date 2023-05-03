@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -93,6 +96,7 @@
   <ItemGroup>
     <Content Include="About_US.aspx" />
     <Content Include="Assign_Feedback.aspx" />
+    <Content Include="Charts.aspx" />
     <Content Include="check_status.aspx" />
     <Content Include="CreateNewStudent.css" />
     <Content Include="Create_New_Faculty.aspx" />
@@ -166,6 +170,13 @@
     </Compile>
     <Compile Include="Assign_Feedback.aspx.designer.cs">
       <DependentUpon>Assign_Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Charts.aspx.cs">
+      <DependentUpon>Charts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Charts.aspx.designer.cs">
+      <DependentUpon>Charts.aspx</DependentUpon>
     </Compile>
     <Compile Include="check_status.aspx.cs">
       <DependentUpon>check_status.aspx</DependentUpon>

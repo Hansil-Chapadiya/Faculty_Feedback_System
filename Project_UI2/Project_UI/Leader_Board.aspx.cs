@@ -13,6 +13,9 @@ namespace Project_UI
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        DataTable tb = new DataTable();
+        DataRow dr;
+
         long sum = 0;
 
         int poor;
@@ -36,6 +39,7 @@ namespace Project_UI
         float q12per;
         protected void Page_Load(object sender, EventArgs e)
         {
+            div2.Visible = false;
             try
             {
                 String sessionId = HttpContext.Current.Session.SessionID;
@@ -113,6 +117,17 @@ namespace Project_UI
             String sql = "Select * from " + year + " where Subject_code = " + DropDownList2.SelectedItem + " ";
             cn.Open();
 
+            div1.Visible = false;
+            div2.Visible = true;
+
+            title.Text = "Subject Name : " + DropDownList1.SelectedValue.ToString() + "<br/>Subject Code : " + DropDownList2.SelectedValue.ToString();
+
+            tb.Columns.Add("Question", typeof(string));
+            tb.Columns.Add("Excellent", typeof(string));
+            tb.Columns.Add("Very_Good", typeof(string));
+            tb.Columns.Add("Good", typeof(string));
+            tb.Columns.Add("Poor", typeof(string));
+            tb.Columns.Add("Very_Poor", typeof(string));
             // Q1 ---------------------------------------------------------------------------------------------------
             try
             {
@@ -145,14 +160,8 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 per = (100 * sum) / maxvalue;
-                Response.Write("Count : " + count + " Sum : " + sum + " Per : " + per);
 
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
+                createtable(1, excellent, very_good, good, poor, very_poor);
 
                 dr.Close();
                 cmd.Dispose();
@@ -202,14 +211,8 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q2per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q2per);
+                createtable(2, excellent, very_good, good, poor, very_poor);
 
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -258,15 +261,8 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q3per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q3per);
 
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(3, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -315,15 +311,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q4per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q4per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(4, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -372,15 +360,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q5per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q5per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(5, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -429,15 +409,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q6per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q6per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(6, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -486,15 +458,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q7per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q7per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(7, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -542,15 +506,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q8per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q8per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(8, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -599,15 +555,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q9per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q9per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(9, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -656,15 +604,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q10per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q10per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(10, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -713,15 +653,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q11per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q11per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(11, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -771,15 +703,7 @@ namespace Project_UI
                 }
                 maxvalue = count * 5;
                 q12per = (100 * sum) / maxvalue;
-                Response.Write(" <br> <br> Count : " + count + " Sum : " + sum + " Per : " + q12per);
-
-
-                Response.Write("Very Poor = " + very_poor);
-                Response.Write("Poor = " + poor);
-                Response.Write("Very good = " + very_good);
-                Response.Write("Good = " + good);
-                Response.Write("Excellent =" + excellent);
-
+                createtable(12, excellent, very_good, good, poor, very_poor);
                 dr.Close();
                 cmd.Dispose();
             }
@@ -800,7 +724,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("Can't send Data second time !!");
+                //Response.Write("Can't send Data second time !!");
             }
         }
 
@@ -813,6 +737,21 @@ namespace Project_UI
         {
             DropDownList1.SelectedIndex = DropDownList2.SelectedIndex;
 
+        }
+
+        public void createtable(int no, int a, int b, int c, int d, int e)
+        {
+            dr = tb.NewRow();
+            dr["Question"] = no;
+            dr["Excellent"] = a;
+            dr["Very_Good"] = b;
+            dr["Good"] = c;
+            dr["Poor"] = d;
+            dr["Very_Poor"] = e;
+            tb.Rows.Add(dr);
+            Gv1.DataSource = tb;
+            Gv1.DataBind();
+            ViewState["table1"] = tb;
         }
     }
 }
