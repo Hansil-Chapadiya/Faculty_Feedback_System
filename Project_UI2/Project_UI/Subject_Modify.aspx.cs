@@ -124,7 +124,8 @@ namespace Project_UI
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 cn.Close();
-                Response.Write("<script>alert('Faculty is Modify !! <br> Now '" + DropDownList4.SelectedItem + "' is New Faculty for this Subject !!');</script>");
+                //Response.Write("<script>alert('Faculty is Modify !! <br> Now '" + DropDownList4.SelectedItem + "' is New Faculty for this Subject !!');</script>");
+                Response.Write("<h3 align = 'center'>Faculty is Modify !!  Now '" + DropDownList4.SelectedItem + "' is New Faculty for this Subject</h3> ");
             }
             catch (Exception)
             {

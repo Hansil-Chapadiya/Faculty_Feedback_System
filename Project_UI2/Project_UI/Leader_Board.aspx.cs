@@ -168,7 +168,8 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+                Response.Write("<h3 align = 'center'>Subject is not Found </h3> ");
+
             }
 
             //Q2 ----------------------------------------------------------------------------------------------------
@@ -218,7 +219,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+               
             }
 
             //Q3 ------------------------------------------------------------------------------------------------------
@@ -268,7 +269,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+
             }
 
             //Q4 ------------------------------------------------------------------------------------------------------
@@ -317,7 +318,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+                
             }
 
             //Q5 ------------------------------------------------------------------------------------------------------
@@ -366,7 +367,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+               
             }
 
             //Q6 ------------------------------------------------------------------------------------------------------
@@ -415,7 +416,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+                
             }
 
             //Q7 ------------------------------------------------------------------------------------------------------
@@ -464,7 +465,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+                
             }
             //Q8 ------------------------------------------------------------------------------------------------------
             try
@@ -512,7 +513,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+                
             }
 
             //Q9 ------------------------------------------------------------------------------------------------------
@@ -561,7 +562,7 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
+                
             }
 
             //Q10 ------------------------------------------------------------------------------------------------------
@@ -610,7 +611,6 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
             }
 
             //Q11 ------------------------------------------------------------------------------------------------------
@@ -659,7 +659,6 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
             }
 
 
@@ -709,7 +708,6 @@ namespace Project_UI
             }
             catch (Exception ex)
             {
-                Response.Write("1: " + ex.Message);
             }
 
             SqlConnection cn2 = new SqlConnection();

@@ -4,13 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Project_UI
 {
-    public partial class Assign_Feedback : System.Web.UI.Page
+    public partial class WebForm4 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,14 +21,19 @@ namespace Project_UI
                 String sessionId = HttpContext.Current.Session.SessionID;
                 if (Session["sid"].ToString() == sessionId)
                 {
-                    if (Session["role_id"].ToString() == "2")
+                    if (Session["role_id"].ToString() == "1")
                     {
-                        //Response.Write(Session["Fac_id"]);
+
                     }
                     else
                     {
                         Response.Redirect("Login_New.aspx");
                     }
+                }
+                var currentYear = DateTime.Today.Year;
+                for (int i = 10; i >= 0; i--)
+                {
+                    DropDownList2.Items.Add((currentYear - i).ToString());
                 }
             }
             catch (Exception)
@@ -34,20 +41,14 @@ namespace Project_UI
                 Response.Redirect("Login_New.aspx");
             }
 
-            //--------------------------------------------------------------------------------------------------------------------------
-
 
             if (!IsPostBack)
             {
                 SqlConnection cn = new SqlConnection();
-                //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
-                //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=Project;Integrated Security=True";
-                //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + Session["team_id"] + ";;Integrated Security=True";
-                //Session["team_id"]
                 string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
                 string conString = connectionString.Replace("Project", Session["team_id"].ToString());
                 cn.ConnectionString = conString;
-                String sql = "Select Subject_code,Subject_name from Subject where Faculty_id = " + Session["User_id"] + " ";
+                String sql = "Select Subject_code,Subject_name from Subject where Form_Status = 1";
                 cn.Open();
                 try
                 {
@@ -56,16 +57,13 @@ namespace Project_UI
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Subject");
                     cn.Close();
-                    DropDownList1.DataSource = ds;
-                    DropDownList1.DataTextField = "Subject_name";
-                    DropDownList1.DataValueField = "Subject_name";
-                    DropDownList1.DataBind();
 
-                    DropDownList2.DataSource = ds;
-                    DropDownList2.DataTextField = "Subject_code";
-                    DropDownList2.DataValueField = "Subject_code";
-                    DropDownList2.DataBind();
+                    DropDownList3.DataSource = ds;
+                    DropDownList3.DataTextField = "Subject_code";
+                    DropDownList3.DataValueField = "Subject_code";
+                    DropDownList3.DataBind();
 
+                    da.Dispose();
                     cmd.Dispose();
 
                 }
@@ -78,35 +76,31 @@ namespace Project_UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            String update_status = "Update Subject Set Form_Status = 1 where Subject_code = "+DropDownList2.SelectedItem+"";
             SqlConnection cn = new SqlConnection();
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
             string conString = connectionString.Replace("Project", Session["team_id"].ToString());
             cn.ConnectionString = conString;
+            String get_details = "select * from Year_" + DropDownList2.SelectedItem.Text + " where (Subject_Code = " + DropDownList3.SelectedItem + " AND Sem = '" + DropDownList1.SelectedItem + "')";
+
             try
             {
                 cn.Open();
-                SqlCommand cmd = new SqlCommand(update_status, cn);
-                cmd.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand(get_details, cn);
+                SqlDataAdapter d = new SqlDataAdapter(cmd);
+                DataSet dds = new DataSet();
+                d.Fill(dds);
+
+                GridView1.DataSource = dds;
+                GridView1.DataBind();
+
                 cmd.Dispose();
-                Response.Write("<script>alert('Assigned Successfully')</script>");
-                Response.Redirect("Send_Notification.aspx");
+                d.Dispose();
                 cn.Close();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                Response.Write("<script>alert('Failed to assigned')</script>");
+                Response.Write(ex.Message);
             }
-        }
-
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DropDownList2.SelectedIndex = DropDownList1.SelectedIndex;
-        }
-
-        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DropDownList1.SelectedIndex = DropDownList2.SelectedIndex;
         }
     }
 }

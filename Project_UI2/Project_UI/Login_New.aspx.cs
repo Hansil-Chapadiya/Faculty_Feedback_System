@@ -110,6 +110,9 @@ namespace Project_UI
                 catch (Exception)
                 {
                     Response.Write("<script>alert('TEAM ID DOESN'T EXIST!');</script>");
+                    Response.Write("<h3 align = 'center'>TEAM ID DOESN'T EXIST</h3> ");
+
+                    //Response.Write("TEAM ID DOESN'T EXIST");
                 }
             }
             else

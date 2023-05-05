@@ -18,7 +18,7 @@
                     <div class="carousel-caption text-end">
                         <h1 class="text-dark-emphasis">Details of Feedback</h1>
                         <p class="text-danger-emphasis"><b>Textual Representation of Details of Feedback Given by Students.</b></p>
-                        <p><a class="btn btn-lg btn-outline-light lin" href="#">Watch Details</a></p>
+                        <p><a class="btn btn-lg btn-outline-light lin" href="Details_Feedback.aspx">Watch Details</a></p>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     <div class="carousel-caption">
                         <h1 class="text-dark-emphasis">Want to Edit Subjects</h1>
                         <p class="text-danger-emphasis"><b>Can Direct Edit Faculty Without Further Process.</b></p>
-                        <p><a class="btn btn-lg btn-outline-light lin" href="#">Edit</a></p>
+                        <p><a class="btn btn-lg btn-outline-light lin" href="Subject_Modify.aspx">Edit</a></p>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <div class="carousel-caption text-start">
                         <h1 class="text-body-emphasis">Report</h1>
                         <p class="text-danger"><b>Looking for graphical Representation of Performance of Faculty.</b></p>
-                        <p><a class="btn btn-lg btn-outline-light lin" href="#">Watch Chart</a></p>
+                        <p><a class="btn btn-lg btn-outline-light lin" href="Charts.aspx">Watch Chart</a></p>
                     </div>
                 </div>
             </div>
