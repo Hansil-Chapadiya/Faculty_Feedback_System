@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Text;
 using System.Security.Cryptography;
+using System.Configuration;
 
 namespace Project_UI
 {
@@ -26,9 +27,13 @@ namespace Project_UI
             // Creating new database for new system.
 
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
+            //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
             //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
             //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True";
+
+            string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+            string conString;
+            cn.ConnectionString = connectionString;
 
             try
             {
@@ -46,7 +51,10 @@ namespace Project_UI
                     {
                         cn.Close();
                         datastr = (TextBox1.Text);
-                        cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + datastr + ";Integrated Security=True";
+                        connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+                        conString = connectionString.Replace("Project", "HOD" + datastr);
+                        cn.ConnectionString = conString;
+                        //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + datastr + ";Integrated Security=True";
                         //cn = new SqlConnection("Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + datastr + ";Integrated Security=True");
                         //cn = new SqlConnection("Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=HOD" + datastr + ";Integrated Security=True");
                         cn.Open();
@@ -111,7 +119,10 @@ namespace Project_UI
             if (user_id.Length > 0 && password.Length > 0)
             {
                 SqlConnection cnn = new SqlConnection();
-                cnn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + str + ";Integrated Security=True";
+                connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+                conString = connectionString.Replace("Project", str);
+                cnn.ConnectionString = conString;
+                //cnn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=" + str + ";Integrated Security=True";
                 //cnn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=" + str + ";Integrated Security=True";
                 //cnn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;Initial Catalog=" + str + ";Integrated Security=True";
                 cnn.Open();

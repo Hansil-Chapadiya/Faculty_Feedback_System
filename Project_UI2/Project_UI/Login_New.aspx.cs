@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Configuration;
 using System.Text;
 
 namespace Project_UI
@@ -29,9 +30,12 @@ namespace Project_UI
                 SqlConnection cn = new SqlConnection();
                 try
                 {
-                    cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
+                    //cn.ConnectionString = "Data Source=LAPTOP-IJ86VO59\\SQLEXPRESS;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
                     //cn.ConnectionString = "Data Source=TARUN\\SQLEXPRESS;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
                     //cn.ConnectionString = "Data Source=HANSIL-S-PC-DGJ\\SQLEXPRESS;;Initial Catalog=HOD" + teamid.Text + ";Integrated Security=True";
+                    string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
+                    string conString = connectionString.Replace("Project", "HOD" + teamid.Text.ToString());
+                    cn.ConnectionString = conString;
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(qstring, cn);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -81,7 +85,7 @@ namespace Project_UI
                                 }
                                 catch (Exception ex)
                                 {
-                                    Response.Write("<script>alert('Failed "+ ex.Message  + "');</script>");
+                                    Response.Write("<script>alert('Failed " + ex.Message + "');</script>");
                                 }
                             }
                             else
@@ -110,9 +114,6 @@ namespace Project_UI
                 catch (Exception)
                 {
                     Response.Write("<script>alert('TEAM ID DOESN'T EXIST!');</script>");
-                    Response.Write("<h3 align = 'center'>TEAM ID DOESN'T EXIST</h3> ");
-
-                    //Response.Write("TEAM ID DOESN'T EXIST");
                 }
             }
             else

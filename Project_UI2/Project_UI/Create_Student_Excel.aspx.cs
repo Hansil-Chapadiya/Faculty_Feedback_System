@@ -6,9 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
+using System.Configuration;
 using System.IO;
 using System.Data.OleDb;
-using System.Configuration;
 
 namespace Project_UI
 {
@@ -51,6 +53,9 @@ namespace Project_UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            String password = "student@123";
+            string pass = encryption(password);
+            String table_year = "Year_" + year;
             try
             {
                 string path = Path.GetFileName(ExcelStudent.FileName);
@@ -61,16 +66,24 @@ namespace Project_UI
                 mycon.Open();
                 OleDbCommand cmd = new OleDbCommand("select * from [Sheet1$]", mycon);
                 OleDbDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                try
                 {
-                    er_id = long.Parse(dr[0].ToString());
-                    fname = dr[1].ToString();
-                    mname = dr[2].ToString();
-                    lname = dr[3].ToString();
-                    email = dr[4].ToString();
-                    savedata(er_id, fname, mname, lname, email);
+                    while (dr.Read())
+                    {
+                        er_id = long.Parse(dr[0].ToString());
+                        fname = dr[1].ToString();
+                        mname = dr[2].ToString();
+                        lname = dr[3].ToString();
+                        email = dr[4].ToString();
+                        savedata(er_id, fname, mname, lname, email);
+                    }
+                    Response.Write("<script>alert('Saved Successfully');</script>");
                 }
-                Response.Write("<script>alert('Saved Successfully');</script>");
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert(Error " + ex.Message + ");</script>");
+                }
+
             }
             catch (Exception)
             {
@@ -82,19 +95,31 @@ namespace Project_UI
                 try
                 {
                     SqlConnection cn = new SqlConnection();
-                    string qstring = "insert into User_ values ('" + er_id + "', '" + fname + "' , '" + mname + "' , '" + lname + "', '" + 3 + "', '" + "student@123" + "','" + email + "','" + Session["team_id"].ToString() + "') ";
-                    String Insert_qstr = "insert into Year_" + year + " values (" + er_id + ",'" + sem + "')";
+                    string qstring = "insert into User_ values ('" + er_id + "', '" + fname + "' , '" + mname + "' , '" + lname + "', '" + 3 + "', '" + pass + "','" + email + "','" + Session["team_id"].ToString() + "') ";
+                    String Insert_qstr = "insert into Year_" + year + " values (" + er_id + ",'" + sem + "',0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
+                    string qstring1 = "insert into Student values ('" + er_id + "', '" + sem + "' , '" + table_year + "')";
                     string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
                     string conString = connectionString.Replace("Project", Session["team_id"].ToString());
                     cn.ConnectionString = conString;
                     cn.Open();
                     SqlCommand cmd1 = new SqlCommand(qstring, cn);
                     cmd1.ExecuteNonQuery();
+                    cmd1.Dispose();
                     try
                     {
                         cmd1 = new SqlCommand(Insert_qstr, cn);
                         cmd1.ExecuteNonQuery();
                         cmd1.Dispose();
+                        try
+                        {
+                            cmd1 = new SqlCommand(qstring1, cn);
+                            cmd1.ExecuteNonQuery();
+                            cmd1.Dispose();
+                        }
+                        catch (Exception ex)
+                        {
+                            Response.Write("<script>alert(Error " + ex.Message + ");</script>");
+                        }
                     }
                     catch (Exception)
                     {
@@ -103,9 +128,26 @@ namespace Project_UI
                 }
                 catch (Exception)
                 {
-                    Response.Write("<script>alert('Can't Saved Successfully');</script>");
+                    Response.Write("<script>alert('Already Exists Enrollment Found in Excel Sheet');</script>");
+                    Response.Write("Please Reload the page");
+                    Response.End();
+
                 }
             }
+        }
+        public string encryption(String password)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[] encrypt;
+            UTF8Encoding en = new UTF8Encoding();
+            encrypt = md5.ComputeHash(en.GetBytes(password));
+            StringBuilder encryptdata = new StringBuilder();
+            for (int i = 0; i < encrypt.Length; i++)
+            {
+                encryptdata.Append(encrypt[i]).ToString();
+            }
+            return encryptdata.ToString();
+
         }
     }
 }
