@@ -129,7 +129,7 @@ namespace Project_UI
                     String userName = email_array[i];
                     MailMessage mailMessage = new MailMessage("pranavbhimani04@gmail.com", userName);
 
-                    mailMessage.Subject = "OTP For Reset Password";
+                    mailMessage.Subject = "FeedBack";
                     mailMessage.Body = "Hey " + userName + " Feedback is Available ";
 
                     SmtpClient smtpClient = new SmtpClient();
