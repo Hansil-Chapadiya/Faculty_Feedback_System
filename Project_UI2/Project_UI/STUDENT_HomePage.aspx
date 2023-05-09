@@ -14,7 +14,7 @@
                            <%-- <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                 Left-aligned but right aligned when large screen
                             </button>--%>
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Subject Code" required="true"></asp:TextBox>
                         </div>
                     </div>
                 </div>
