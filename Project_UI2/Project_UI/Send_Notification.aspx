@@ -5,7 +5,7 @@
      <div class="container text-center w-25 m-auto" runat="server">
         <div class="row align-items-center m-3 mt-5">
             <div class="col mt-5">
-                <h1>Choose Sem for inserting Students</h1>
+                <h1>Choose Details for Assign Feedback</h1>
                 <p class="lead">The purpose of feedback in the assessment and learning process is to improve a student's performance - not put a damper on it. It is essential that the process of providing feedback is a positive, or at least a neutral, learning experience for the student.</p>
                 <div class="d-flex justify-content-center m-2">
                     <div>

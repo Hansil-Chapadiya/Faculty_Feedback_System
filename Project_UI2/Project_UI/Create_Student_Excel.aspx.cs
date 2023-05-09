@@ -79,9 +79,9 @@ namespace Project_UI
                     }
                     Response.Write("<script>alert('Saved Successfully');</script>");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Response.Write("<script>alert(Error " + ex.Message + ");</script>");
+                    //Response.Write("<script>alert('Not Saved!');</script>");
                 }
 
             }
@@ -116,9 +116,9 @@ namespace Project_UI
                             cmd1.ExecuteNonQuery();
                             cmd1.Dispose();
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-                            Response.Write("<script>alert(Error " + ex.Message + ");</script>");
+                            Response.Write("<script>alert('Can't Saved Successfully');</script>");
                         }
                     }
                     catch (Exception)

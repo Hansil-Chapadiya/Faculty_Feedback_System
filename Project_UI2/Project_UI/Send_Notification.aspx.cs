@@ -136,7 +136,7 @@ namespace Project_UI
                     smtpClient.Send(mailMessage);
                 }
 
-
+                Response.Write("<script>alert('Assign Feedback and Send Email Successfully!');</script>");
             }
             catch (Exception ex)
             {
