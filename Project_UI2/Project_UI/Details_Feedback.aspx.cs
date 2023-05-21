@@ -41,6 +41,8 @@ namespace Project_UI
                 Response.Redirect("Login_New.aspx");
             }
 
+            layout_div.Visible = true;
+            table_div.Visible = false;
 
             if (!IsPostBack)
             {
@@ -76,6 +78,8 @@ namespace Project_UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            layout_div.Visible = false;
+            table_div.Visible = true;
             SqlConnection cn = new SqlConnection();
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
             string conString = connectionString.Replace("Project", Session["team_id"].ToString());

@@ -156,6 +156,7 @@
     <Content Include="Leader_Board.aspx" />
     <Content Include="Show_table.aspx" />
     <Content Include="Details_Feedback.aspx" />
+    <Content Include="Home.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About_US.aspx.cs">
@@ -420,6 +421,13 @@
     </Compile>
     <Compile Include="Details_Feedback.aspx.designer.cs">
       <DependentUpon>Details_Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

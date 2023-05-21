@@ -17,6 +17,6 @@
         <asp:Button ID="show" runat="server" Text="View Performance" CssClass="btn btn-link btn-lg" OnClick="show_Click"/>
         <br />
         <br />
-        <ajaxToolkit:BarChart ID="BarChart1" runat="server" ChartHeight="600" ChartWidth="600"/>
+        <ajaxToolkit:BarChart ID="BarChart1" runat="server" ChartHeight="600" ChartWidth="600"  />
     </div>
 </asp:Content>

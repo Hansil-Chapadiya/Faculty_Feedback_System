@@ -114,6 +114,7 @@ namespace Project_UI
             BarChart1.Series.Add(new AjaxControlToolkit.BarChartSeries { Data = Q });
             BarChart1.CategoriesAxis = string.Join(",", Q_Text);
             BarChart1.ChartTitle = "Subject Code : " + Subject.SelectedValue.ToString() + " OverView";
+
         }
     }
 }

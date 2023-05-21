@@ -117,9 +117,9 @@ namespace Project_UI
                     if (dr1.Read())
                     {
                         email_list.Add(dr1.GetString(0));
+                    }
                         dr1.Close();
                         cmd1.Dispose();
-                    }
                 }
                 email_array = email_list.ToArray();
 
