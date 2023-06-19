@@ -62,7 +62,7 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary">Faculty</strong>
-                    <h3 class="mb-0">Manipulate Faculty</h3>
+                    <h3 class="mb-0">Faculty Section</h3>
                     <p class="card-text mb-auto">In this Head of Department can manipulate their faculty.</p>
                     <asp:Button ID="Button1" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" PostBackUrl="~/HOD_Faculty_Function.aspx" />
                 </div>
@@ -75,7 +75,7 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-danger">Students</strong>
-                    <h3 class="mb-0">Manipulate Students</h3>
+                    <h3 class="mb-0">Students Section</h3>
                     <p class="card-text mb-auto">In this Head of Department can manipulate thier students.</p>
                     <asp:Button ID="Button2" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" PostBackUrl="~/HOD_Student_Function.aspx" />
                 </div>
@@ -88,7 +88,7 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-success">Subjects</strong>
-                    <h3 class="mb-0">Mapping Subjects</h3>
+                    <h3 class="mb-0">Subjects</h3>
                     <p class="card-text mb-auto">In this Head of Department can mapping the subject to their faculty.</p>
                     <asp:Button ID="Button3" runat="server" Text="Go" CssClass="btn btn-outline-light lin stretched-link" PostBackUrl="~/HOD_Subject_Function.aspx" />
                 </div>

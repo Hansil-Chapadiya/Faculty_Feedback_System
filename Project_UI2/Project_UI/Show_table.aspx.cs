@@ -53,6 +53,7 @@ namespace Project_UI
                     da.Fill(ds);
                     GridView1.DataSource = ds;
                     GridView1.DataBind();
+                    Label1.Text = GridView1.Rows.Count.ToString();
                 }
                 catch (Exception ex)
                 {

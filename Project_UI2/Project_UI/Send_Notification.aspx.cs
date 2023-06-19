@@ -85,7 +85,7 @@ namespace Project_UI
             string connectionString = ConfigurationManager.ConnectionStrings["ProjectConnectionString"].ToString();
             string conString = connectionString.Replace("Project", Session["team_id"].ToString());
             cn.ConnectionString = conString;
-            String get_enroll = "select User_id ,show_status from Year_" + DropDownList2.SelectedItem.Text + " where (Subject_Code = " + DropDownList3.SelectedItem + " AND Sem = '" + DropDownList1.SelectedItem + "')";
+            String get_enroll = "select User_id ,show_status from Year_" + DropDownList2.SelectedItem.Text + " where (show_status = 0 AND Sem = '" + DropDownList1.SelectedItem + "')";
             //String get_email = "select Email from User_ where User_id = ";
             int i = 0;
             try

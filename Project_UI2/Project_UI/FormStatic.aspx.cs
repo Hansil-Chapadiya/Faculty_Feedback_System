@@ -85,6 +85,7 @@ namespace Project_UI
                         cmd = new SqlCommand(Insertstr, cn);
                         cmd.ExecuteNonQuery();
                         cmd.Dispose();
+                        Response.Redirect("STUDENT_HomePage.aspx");
                     }
                     catch (Exception ex)
                     {
@@ -96,7 +97,6 @@ namespace Project_UI
                     Response.Write("2" + ex.Message);
                 }
                 cn.Close();
-
             }
             catch (Exception ex)
             {

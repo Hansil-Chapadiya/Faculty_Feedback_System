@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="table_div" class="container text-center w-35 m-auto mt-5" runat="server">
-            <h3>Student who fill the feedback form is display here.</h3>
+            <h3>Total Number Of Students : <asp:Label ID="Label1" runat="server" Text=""></asp:Label> </h3>
             <asp:GridView ID="GridView1" runat="server" class="m-auto" Height="381px" Width="1042px" 
                 Font-Size="Large" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
                 <AlternatingRowStyle BackColor="#DCDCDC" />
